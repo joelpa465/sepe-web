@@ -133,6 +133,14 @@ const blogPosts: BlogPost[] = [
 function BlogPostItem({ post, index, total }: { post: BlogPost; index: number; total: number }) {
   const [imageError, setImageError] = useState(false);
 
+  // Debug temporal
+  if (post.id === "cita-previa-seguridad-social") {
+    console.log("[BlogPostItem] Post ID:", post.id);
+    console.log("[BlogPostItem] Post image:", post.image);
+    console.log("[BlogPostItem] ImageError:", imageError);
+    console.log("[BlogPostItem] Should show image:", post.image && !imageError);
+  }
+
   return (
     <div>
       <Link href={`/blog/${post.id}`} className="block group">
@@ -145,8 +153,13 @@ function BlogPostItem({ post, index, total }: { post: BlogPost; index: number; t
                   src={post.image}
                   alt={post.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  onError={() => {
-                    console.error("[BlogSection] Error loading image:", post.image);
+                  onLoad={() => {
+                    if (post.id === "cita-previa-seguridad-social") {
+                      console.log("[BlogPostItem] Image loaded successfully:", post.image);
+                    }
+                  }}
+                  onError={(e) => {
+                    console.error("[BlogSection] Error loading image:", post.image, e);
                     setImageError(true);
                   }}
                 />
