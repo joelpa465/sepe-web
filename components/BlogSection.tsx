@@ -135,7 +135,7 @@ export default function BlogSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Blogs
           </h2>
         </div>
