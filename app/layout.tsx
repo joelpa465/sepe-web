@@ -5,7 +5,7 @@ import "./globals.css";
 import CookieBanner from "@/components/CookieBanner";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import NewsletterBanner from "@/components/NewsletterBanner";
-import AdBlockDetector from "@/components/AdBlockDetector";
+import AdBlockDetectorWrapper from "@/components/AdBlockDetectorWrapper";
 import { ADS_ENABLED } from "@/lib/config";
 import { Suspense } from "react";
 
@@ -123,7 +123,7 @@ export default function RootLayout({
         <CookieBanner />
         <NewsletterBanner />
         {/* AdBlock Detector - Solo se activa si los anuncios están habilitados */}
-        {ADS_ENABLED && <AdBlockDetector />}
+        <AdBlockDetectorWrapper />
       </body>
     </html>
   );
