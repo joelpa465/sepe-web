@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import AdSidebar from "./AdSidebar";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 interface BlogPost {
   id: string;
@@ -132,52 +132,27 @@ const blogPosts: BlogPost[] = [
 // Componente individual para cada post con manejo de errores de imagen
 function BlogPostItem({ post, index, total }: { post: BlogPost; index: number; total: number }) {
   const [imageError, setImageError] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
-
-  // Verificar si la imagen existe al montar el componente
-  useEffect(() => {
-    if (post.image) {
-      const img = new Image();
-      img.onload = () => {
-        console.log("[BlogSection] Image loaded successfully:", post.image);
-        setImageLoaded(true);
-      };
-      img.onerror = () => {
-        console.error("[BlogSection] Error loading image:", post.image);
-        setImageError(true);
-      };
-      img.src = post.image;
-    } else {
-      // Si no hay imagen, marcar como cargado para no mostrar placeholder
-      setImageLoaded(false);
-    }
-  }, [post.image]);
 
   return (
     <div>
       <Link href={`/blog/${post.id}`} className="block group">
         <article className="flex gap-6 py-8 hover:bg-gray-50 transition-colors">
           {/* Imagen */}
-          <div className="flex-shrink-0 relative w-32 h-32 md:w-40 md:h-40">
+          <div className="flex-shrink-0">
             {post.image && !imageError ? (
-              <>
-                {/* Placeholder - debajo, solo visible mientras carga */}
-                <div className={`absolute inset-0 rounded-lg bg-gradient-to-br ${post.gradient} flex items-center justify-center text-white shadow-md transition-opacity duration-300 ${imageLoaded ? 'opacity-0 z-0' : 'opacity-100 z-10'}`}>
-                  {post.icon}
-                </div>
-                {/* Imagen - arriba cuando está cargada */}
-                {imageLoaded && (
-                  <div className="absolute inset-0 rounded-lg overflow-hidden bg-gray-100 z-20">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                )}
-              </>
+              <div className="w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden bg-gray-100">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  onError={() => {
+                    console.error("[BlogSection] Error loading image:", post.image);
+                    setImageError(true);
+                  }}
+                />
+              </div>
             ) : (
-              <div className={`w-full h-full rounded-lg bg-gradient-to-br ${post.gradient} flex items-center justify-center text-white shadow-md`}>
+              <div className={`w-32 h-32 md:w-40 md:h-40 rounded-lg bg-gradient-to-br ${post.gradient} flex items-center justify-center text-white shadow-md`}>
                 {post.icon}
               </div>
             )}
