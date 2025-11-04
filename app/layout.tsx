@@ -86,16 +86,28 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-icon.png" />
         <link rel="manifest" href="/manifest.webmanifest" />
         <meta name="theme-color" content="#2563eb" />
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2866743279585663"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
       </head>
       <body
         className={`${inter.variable} ${playfair.variable} antialiased`}
       >
+        <Script
+          id="adsbygoogle-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-2866743279585663",
+                enable_page_level_ads: true
+              });
+            `,
+          }}
+        />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2866743279585663"
+          strategy="beforeInteractive"
+          crossOrigin="anonymous"
+        />
         <Suspense fallback={null}>
           <GoogleAnalytics />
         </Suspense>
