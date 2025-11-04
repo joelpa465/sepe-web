@@ -87,10 +87,10 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.webmanifest" />
         <meta name="theme-color" content="#2563eb" />
         {/* Google Analytics - Scripts directos en HTML para que aparezcan en el HTML estático */}
+        {/* @ts-ignore - Script directo en HTML para visibilidad en HTML estático */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-BKCNGX9D46"
-          dangerouslySetInnerHTML={{ __html: "" }}
         />
         <script
           dangerouslySetInnerHTML={{
