@@ -139,6 +139,7 @@ function BlogPostItem({ post, index, total }: { post: BlogPost; index: number; t
     if (post.image) {
       const img = new Image();
       img.onload = () => {
+        console.log("[BlogSection] Image loaded successfully:", post.image);
         setImageLoaded(true);
       };
       img.onerror = () => {
@@ -146,6 +147,9 @@ function BlogPostItem({ post, index, total }: { post: BlogPost; index: number; t
         setImageError(true);
       };
       img.src = post.image;
+    } else {
+      // Si no hay imagen, marcar como cargado para no mostrar placeholder
+      setImageLoaded(false);
     }
   }, [post.image]);
 
@@ -157,9 +161,13 @@ function BlogPostItem({ post, index, total }: { post: BlogPost; index: number; t
           <div className="flex-shrink-0 relative w-32 h-32 md:w-40 md:h-40">
             {post.image && !imageError ? (
               <>
-                {/* Mostrar imagen cuando esté cargada */}
+                {/* Placeholder - debajo, solo visible mientras carga */}
+                <div className={`absolute inset-0 rounded-lg bg-gradient-to-br ${post.gradient} flex items-center justify-center text-white shadow-md transition-opacity duration-300 ${imageLoaded ? 'opacity-0 z-0' : 'opacity-100 z-10'}`}>
+                  {post.icon}
+                </div>
+                {/* Imagen - arriba cuando está cargada */}
                 {imageLoaded && (
-                  <div className="absolute inset-0 rounded-lg overflow-hidden bg-gray-100">
+                  <div className="absolute inset-0 rounded-lg overflow-hidden bg-gray-100 z-20">
                     <img
                       src={post.image}
                       alt={post.title}
@@ -167,10 +175,6 @@ function BlogPostItem({ post, index, total }: { post: BlogPost; index: number; t
                     />
                   </div>
                 )}
-                {/* Mostrar placeholder mientras carga o si hay error */}
-                <div className={`absolute inset-0 rounded-lg bg-gradient-to-br ${post.gradient} flex items-center justify-center text-white shadow-md ${imageLoaded ? 'opacity-0 transition-opacity duration-300' : 'opacity-100'}`}>
-                  {post.icon}
-                </div>
               </>
             ) : (
               <div className={`w-full h-full rounded-lg bg-gradient-to-br ${post.gradient} flex items-center justify-center text-white shadow-md`}>
