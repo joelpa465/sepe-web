@@ -11,8 +11,8 @@ import {
   Users
 } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import AdSidebar from "./AdSidebar";
+import { useState } from "react";
 
 interface BlogPost {
   id: string;
@@ -129,6 +129,72 @@ const blogPosts: BlogPost[] = [
   }
 ];
 
+// Componente individual para cada post con manejo de errores de imagen
+function BlogPostItem({ post, index, total }: { post: BlogPost; index: number; total: number }) {
+  const [imageError, setImageError] = useState(false);
+
+  return (
+    <div>
+      <Link href={`/blog/${post.id}`} className="block group">
+        <article className="flex gap-6 py-8 hover:bg-gray-50 transition-colors">
+          {/* Imagen */}
+          <div className="flex-shrink-0">
+            {post.image && !imageError ? (
+              <div className="w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden bg-gray-100 relative">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  onError={() => {
+                    console.error("[BlogSection] Error loading image:", post.image);
+                    setImageError(true);
+                  }}
+                />
+              </div>
+            ) : (
+              <div className={`w-32 h-32 md:w-40 md:h-40 rounded-lg bg-gradient-to-br ${post.gradient} flex items-center justify-center text-white shadow-md`}>
+                {post.icon}
+              </div>
+            )}
+          </div>
+
+          {/* Contenido */}
+          <div className="flex-1 min-w-0">
+            {/* Categoría */}
+            <div className="mb-2">
+              <span className="text-xs font-normal text-gray-400 uppercase tracking-wider" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                {post.category}
+              </span>
+            </div>
+
+            {/* Título */}
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-tight" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+              {post.title}
+            </h3>
+
+            {/* Autor y Fecha */}
+            <div className="mb-3">
+              <p className="text-sm text-gray-400 font-normal" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                {post.author || 'Equipo SEPE'} | {post.location || 'España'} | {post.date}
+              </p>
+            </div>
+
+            {/* Descripción */}
+            <p className="text-base text-gray-700 leading-relaxed line-clamp-3" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+              {post.description}
+            </p>
+          </div>
+        </article>
+      </Link>
+      
+      {/* Separador (excepto en el último) */}
+      {index < total - 1 && (
+        <div className="border-t border-gray-200"></div>
+      )}
+    </div>
+  );
+}
+
 export default function BlogSection() {
   return (
     <section id="blogs" className="py-16 bg-white">
@@ -147,62 +213,7 @@ export default function BlogSection() {
           <div className="flex-1 max-w-4xl">
             <div className="space-y-0">
               {blogPosts.map((post, index) => (
-                <div key={post.id}>
-                  <Link href={`/blog/${post.id}`} className="block group">
-                    <article className="flex gap-6 py-8 hover:bg-gray-50 transition-colors">
-                      {/* Imagen */}
-                      <div className="flex-shrink-0">
-                        {post.image ? (
-                          <div className="w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden bg-gray-100">
-                            <Image
-                              src={post.image}
-                              alt={post.title}
-                              width={160}
-                              height={160}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                            />
-                          </div>
-                        ) : (
-                          <div className={`w-32 h-32 md:w-40 md:h-40 rounded-lg bg-gradient-to-br ${post.gradient} flex items-center justify-center text-white shadow-md`}>
-                            {post.icon}
-                          </div>
-                        )}
-                      </div>
-
-                      {/* Contenido */}
-                      <div className="flex-1 min-w-0">
-                        {/* Categoría */}
-                        <div className="mb-2">
-                          <span className="text-xs font-normal text-gray-400 uppercase tracking-wider" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                            {post.category}
-                          </span>
-                        </div>
-
-                        {/* Título */}
-                        <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-tight" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                          {post.title}
-                        </h3>
-
-                        {/* Autor y Fecha */}
-                        <div className="mb-3">
-                          <p className="text-sm text-gray-400 font-normal" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                            {post.author || 'Equipo SEPE'} | {post.location || 'España'} | {post.date}
-                          </p>
-                        </div>
-
-                        {/* Descripción */}
-                        <p className="text-base text-gray-700 leading-relaxed line-clamp-3" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                          {post.description}
-                        </p>
-                      </div>
-                    </article>
-                  </Link>
-                  
-                  {/* Separador (excepto en el último) */}
-                  {index < blogPosts.length - 1 && (
-                    <div className="border-t border-gray-200"></div>
-                  )}
-                </div>
+                <BlogPostItem key={post.id} post={post} index={index} total={blogPosts.length} />
               ))}
             </div>
           </div>
