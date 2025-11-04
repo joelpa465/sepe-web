@@ -52,7 +52,8 @@ const blogPosts: BlogPost[] = [
     date: "14 OCT 2024",
     readTime: "7 min",
     author: "Equipo SEPE",
-    location: "España"
+    location: "España",
+    image: "/images/Blog/cita-previa.png"
   },
   {
     id: "ayudas-discapacitados",
