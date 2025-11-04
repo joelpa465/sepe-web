@@ -699,6 +699,16 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
 export default async function BlogPost({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
+  
+  // Debug temporal - servidor
+  console.log('[SERVER] ID recibido:', id);
+  console.log('[SERVER] Tipo de ID:', typeof id);
+  console.log('[SERVER] Keys en blogPosts:', Object.keys(blogPosts));
+  console.log('[SERVER] ID existe?', id in blogPosts);
+  console.log('[SERVER] Post encontrado?', !!blogPosts[id]);
+  
+  const availableKeys = Object.keys(blogPosts);
+  const postExists = id in blogPosts;
   const post = blogPosts[id];
 
   if (!post) {
@@ -708,7 +718,12 @@ export default async function BlogPost({ params }: { params: Promise<{ id: strin
         <main className="flex-grow bg-white flex items-center justify-center py-32">
           <div className="text-center">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Artículo no encontrado</h1>
-            <Link href="/" className="text-blue-600 hover:text-blue-800">
+            <p className="text-sm text-gray-600 mt-4">ID solicitado: &quot;{id}&quot;</p>
+            <p className="text-sm text-gray-600">Tipo de ID: {typeof id}</p>
+            <p className="text-sm text-gray-600">IDs disponibles: {availableKeys.join(', ')}</p>
+            <p className="text-sm text-gray-600">Existe en objeto: {postExists ? 'Sí' : 'No'}</p>
+            <p className="text-sm text-gray-600 mt-4">Keys encontradas en blogPosts: {availableKeys.length}</p>
+            <Link href="/" className="text-blue-600 hover:text-blue-800 mt-4 inline-block">
               Volver al inicio
             </Link>
           </div>
