@@ -86,15 +86,13 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-icon.png" />
         <link rel="manifest" href="/manifest.webmanifest" />
         <meta name="theme-color" content="#2563eb" />
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-BKCNGX9D46"
-          strategy="beforeInteractive"
+        {/* Google Analytics - Scripts directos en HTML para que aparezcan en el HTML estático */}
+        <script
           async
+          src="https://www.googletagmanager.com/gtag/js?id=G-BKCNGX9D46"
+          dangerouslySetInnerHTML={{ __html: "" }}
         />
-        <Script
-          id="google-analytics"
-          strategy="beforeInteractive"
+        <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
