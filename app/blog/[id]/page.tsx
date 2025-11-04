@@ -1103,11 +1103,103 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const post = blogPosts[id];
   
+  if (!post) {
+    return {
+      title: "Artículo no encontrado | Web Cursos SEPE",
+      description: "El artículo solicitado no está disponible.",
+    };
+  }
+
+  const baseUrl = "https://webcursosepe.es";
+  const url = `${baseUrl}/blog/${id}`;
+  const imageUrl = post.image ? `${baseUrl}${post.image}` : `${baseUrl}/og-image.jpg`;
+  
+  // Formatear fecha para Open Graph (formato ISO 8601)
+  // Manejar diferentes formatos de fecha (YYYY, "DD MMM YYYY", etc.)
+  let publishedDate: string;
+  if (post.date) {
+    try {
+      // Si es solo un año (ej: "2024"), usar 1 de enero
+      if (/^\d{4}$/.test(post.date.trim())) {
+        publishedDate = new Date(`${post.date.trim()}-01-01`).toISOString();
+      } else {
+        // Intentar parsear la fecha directamente
+        const parsed = new Date(post.date);
+        publishedDate = isNaN(parsed.getTime()) ? new Date().toISOString() : parsed.toISOString();
+      }
+    } catch {
+      publishedDate = new Date().toISOString();
+    }
+  } else {
+    publishedDate = new Date().toISOString();
+  }
+  
+  // Generar keywords basadas en el contenido
+  const keywords = [
+    post.category?.toLowerCase(),
+    "sepe",
+    "trámites sepe",
+    post.title.toLowerCase().split(" ").slice(0, 5).join(" "),
+    "ayudas españa",
+    "prestaciones",
+    "guía completa",
+    "2024"
+  ].filter(Boolean);
+
   return {
-    title: post ? `${post.title} | Web Cursos SEPE` : "Artículo | Web Cursos SEPE",
-    description: post?.description || "Información sobre trámites SEPE",
+    title: `${post.title} | Web Cursos SEPE`,
+    description: post.description,
+    keywords: keywords,
+    authors: [{ name: post.author || "Equipo SEPE" }],
+    creator: post.author || "Equipo SEPE",
+    publisher: "Web Cursos SEPE",
     alternates: {
-      canonical: `/blog/${id}`,
+      canonical: url,
+    },
+    openGraph: {
+      type: "article",
+      locale: "es_ES",
+      url: url,
+      title: post.title,
+      description: post.description,
+      siteName: "Web Cursos SEPE",
+      publishedTime: publishedDate,
+      modifiedTime: publishedDate,
+      authors: [post.author || "Equipo SEPE"],
+      section: post.category,
+      tags: [post.category, "SEPE", "Trámites", "Ayudas"],
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: [imageUrl],
+      creator: "@WebCursosSEPE", // Actualiza con tu cuenta de Twitter si la tienes
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+    other: {
+      "article:author": post.author || "Equipo SEPE",
+      "article:published_time": publishedDate,
+      "article:modified_time": publishedDate,
+      "article:section": post.category,
     },
   };
 }
@@ -1135,10 +1227,155 @@ export default async function BlogPost({ params }: { params: Promise<{ id: strin
 
   const Icon = post.icon;
 
+  // Schema.org JSON-LD para Article
+  const baseUrl = "https://webcursosepe.es";
+  const url = `${baseUrl}/blog/${id}`;
+  const imageUrl = post.image ? `${baseUrl}${post.image}` : `${baseUrl}/og-image.jpg`;
+  const publishedDate = post.date ? new Date(post.date).toISOString() : new Date().toISOString();
+  
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.description,
+    image: imageUrl,
+    datePublished: publishedDate,
+    dateModified: publishedDate,
+    author: {
+      "@type": "Organization",
+      name: post.author || "Equipo SEPE",
+      url: baseUrl,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Web Cursos SEPE",
+      url: baseUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: `${baseUrl}/logo.png`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
+    articleSection: post.category,
+    keywords: post.category,
+    inLanguage: "es-ES",
+  };
+
+  // Schema.org JSON-LD para BreadcrumbList
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Inicio",
+        item: baseUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${baseUrl}/#blogs`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: url,
+      },
+    ],
+  };
+
+  // Extraer FAQs del contenido para Schema.org FAQPage
+  const extractFAQs = () => {
+    if (!post.content) return [];
+    
+    const faqs: Array<{ question: string; answer: string }> = [];
+    let currentQuestion = "";
+    let currentAnswer: string[] = [];
+    let inFAQSection = false;
+    
+    for (let i = 0; i < post.content.length; i++) {
+      const item = post.content[i];
+      
+      // Detectar inicio de sección FAQ
+      if (item.type === "heading" && 
+          (item.text.toLowerCase().includes("preguntas frecuentes") || 
+           item.text.toLowerCase().includes("faq"))) {
+        inFAQSection = true;
+        continue;
+      }
+      
+      if (inFAQSection) {
+        // Detectar pregunta (headings que empiezan con Q o son preguntas)
+        if (item.type === "heading" && (item.text.startsWith("Q") || item.text.includes("?"))) {
+          // Guardar FAQ anterior si existe
+          if (currentQuestion && currentAnswer.length > 0) {
+            faqs.push({
+              question: currentQuestion,
+              answer: currentAnswer.join(" "),
+            });
+          }
+          currentQuestion = item.text.replace(/^Q\d+:\s*/, "");
+          currentAnswer = [];
+        } else if (currentQuestion && item.type === "paragraph") {
+          currentAnswer.push(item.text);
+        } else if (currentQuestion && item.type === "list" && item.items) {
+          currentAnswer.push(item.items.join(" "));
+        }
+      }
+    }
+    
+    // Añadir último FAQ
+    if (currentQuestion && currentAnswer.length > 0) {
+      faqs.push({
+        question: currentQuestion,
+        answer: currentAnswer.join(" "),
+      });
+    }
+    
+    return faqs;
+  };
+
+  const faqs = extractFAQs();
+  
+  const faqSchema = faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  } : null;
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
       <ScrollProgressBar />
+      
+      {/* Schema.org JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       
       <main className="flex-grow bg-white">
         {/* Hero */}
@@ -1154,31 +1391,46 @@ export default async function BlogPost({ params }: { params: Promise<{ id: strin
                   Volver
                 </Link>
               </div>
-              <h1 className="text-3xl sm:text-4xl font-bold mb-6">
+              <h1 className="text-3xl sm:text-4xl font-bold mb-6" itemProp="headline">
                 {post.title}
               </h1>
               <div className="flex items-center gap-6 text-blue-100">
                 <div className="flex items-center">
                   <Clock className="w-5 h-5 mr-2" />
-                  {post.readTime}
+                  <span itemProp="timeRequired">{post.readTime}</span>
                 </div>
                 <span>•</span>
-                <span>{post.date}</span>
+                <time dateTime={publishedDate} itemProp="datePublished">
+                  {post.date}
+                </time>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Breadcrumb */}
+        {/* Breadcrumb - Estructura semántica mejorada */}
         <div className="bg-gray-50 py-4 border-b">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <nav className="text-sm max-w-4xl mx-auto">
-              <ol className="flex items-center space-x-2">
-                <li><Link href="/" className="text-blue-600 hover:text-blue-800">Inicio</Link></li>
-                <li><span className="text-gray-400">/</span></li>
-                <li className="text-gray-700">Blog</li>
-                <li><span className="text-gray-400">/</span></li>
-                <li className="text-gray-700">{post.title}</li>
+            <nav aria-label="Breadcrumb" className="text-sm max-w-4xl mx-auto">
+              <ol className="flex items-center space-x-2" itemScope itemType="https://schema.org/BreadcrumbList">
+                <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+                  <Link href="/" className="text-blue-600 hover:text-blue-800" itemProp="item">
+                    <span itemProp="name">Inicio</span>
+                  </Link>
+                  <meta itemProp="position" content="1" />
+                </li>
+                <li><span className="text-gray-400" aria-hidden="true">/</span></li>
+                <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+                  <Link href="/#blogs" className="text-blue-600 hover:text-blue-800" itemProp="item">
+                    <span itemProp="name">Blog</span>
+                  </Link>
+                  <meta itemProp="position" content="2" />
+                </li>
+                <li><span className="text-gray-400" aria-hidden="true">/</span></li>
+                <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem" className="text-gray-700">
+                  <span itemProp="name">{post.title}</span>
+                  <meta itemProp="position" content="3" />
+                </li>
               </ol>
             </nav>
           </div>
@@ -1195,17 +1447,18 @@ export default async function BlogPost({ params }: { params: Promise<{ id: strin
               
               {/* Contenido principal */}
               <div className="flex-1 max-w-4xl">
-                <article className="prose prose-lg max-w-none">
+                <article className="prose prose-lg max-w-none" itemScope itemType="https://schema.org/Article">
                   {/* Intro imagen */}
                   {post.image ? (
                     <div className="mb-12 rounded-2xl overflow-hidden shadow-lg">
                       <Image
                         src={post.image}
-                        alt={post.title}
+                        alt={`${post.title} - Imagen principal del artículo`}
                         width={894}
                         height={826}
                         className="w-full h-auto"
                         priority
+                        itemProp="image"
                       />
                     </div>
                   ) : (
@@ -1219,7 +1472,7 @@ export default async function BlogPost({ params }: { params: Promise<{ id: strin
                   )}
 
                   {/* Contenido del artículo */}
-                  <div className="space-y-6">
+                  <div className="space-y-6" itemProp="articleBody">
                     {post.content.map((item: any, index: number) => {
                       // Contamos solo los headings para insertar banners
                       const headingCount = post.content.slice(0, index).filter((i: any) => i.type === "heading").length;
@@ -1259,7 +1512,7 @@ export default async function BlogPost({ params }: { params: Promise<{ id: strin
                           </div>
                         )}
                         {item.type === "intro" && (
-                          <p className="text-xl text-gray-800 leading-relaxed font-medium mb-6">
+                          <p className="text-xl text-gray-800 leading-relaxed font-medium mb-6" itemProp="description">
                             {item.text}
                           </p>
                         )}
