@@ -1,11 +1,23 @@
 "use client";
 
+import { ADS_ENABLED } from "@/lib/config";
+
 interface AdBannerProps {
   type?: "horizontal" | "vertical";
   className?: string;
 }
 
 export default function AdBanner({ type = "horizontal", className = "" }: AdBannerProps) {
+  // Si los anuncios están deshabilitados, no renderizar nada pero mantener el espacio reservado
+  if (!ADS_ENABLED) {
+    return (
+      <div className={className} style={{ display: "none" }}>
+        {/* Espacio reservado - oculto pero mantiene la estructura */}
+        <div className={`${type === "horizontal" ? "h-32 md:h-40" : "h-64"}`}></div>
+      </div>
+    );
+  }
+
   return (
     <div className={className}>
       {/* Label de "Advertisement" */}

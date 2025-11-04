@@ -1,10 +1,22 @@
 "use client";
 
+import { ADS_ENABLED } from "@/lib/config";
+
 interface AdSidebarProps {
   position: "left" | "right";
 }
 
 export default function AdSidebar({ position }: AdSidebarProps) {
+  // Si los anuncios están deshabilitados, no renderizar nada pero mantener el espacio reservado
+  if (!ADS_ENABLED) {
+    return (
+      <aside className={`w-full ${position === "left" ? "lg:mr-8" : "lg:ml-8"} hidden xl:block`}>
+        {/* Espacio reservado - invisible pero mantiene el layout */}
+        <div className="sticky top-24" style={{ minHeight: "600px" }}></div>
+      </aside>
+    );
+  }
+
   return (
     <aside className={`w-full ${position === "left" ? "lg:mr-8" : "lg:ml-8"}`}>
       <div className="sticky top-24 space-y-6">

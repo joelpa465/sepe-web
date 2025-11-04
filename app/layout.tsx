@@ -6,6 +6,7 @@ import CookieBanner from "@/components/CookieBanner";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import NewsletterBanner from "@/components/NewsletterBanner";
 import AdBlockDetector from "@/components/AdBlockDetector";
+import { ADS_ENABLED } from "@/lib/config";
 import { Suspense } from "react";
 
 const inter = Inter({
@@ -106,19 +107,23 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} antialiased`}
       >
-        <Script
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2866743279585663"
-          strategy="beforeInteractive"
-          async
-          crossOrigin="anonymous"
-        />
+        {/* Script de AdSense - Solo se carga si los anuncios están habilitados */}
+        {ADS_ENABLED && (
+          <Script
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2866743279585663"
+            strategy="beforeInteractive"
+            async
+            crossOrigin="anonymous"
+          />
+        )}
         <Suspense fallback={null}>
           <GoogleAnalytics />
         </Suspense>
         {children}
         <CookieBanner />
         <NewsletterBanner />
-        <AdBlockDetector />
+        {/* AdBlock Detector - Solo se activa si los anuncios están habilitados */}
+        {ADS_ENABLED && <AdBlockDetector />}
       </body>
     </html>
   );
