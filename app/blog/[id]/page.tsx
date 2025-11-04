@@ -397,6 +397,284 @@ const blogPosts: { [key: string]: any } = {
         text: "En resumen: planifica, solicita con calma y aprovecha este periodo para lo más importante —tu recuperación y el cuidado de tu hijo."
       }
     ]
+  },
+  "cita-previa-seguridad-social": {
+    title: "Cómo Solicitar Cita Previa en el Instituto Nacional de la Seguridad Social (INSS)",
+    description: "Guía completa para solicitar, gestionar y comprender el sistema de cita previa del INSS. Procedimiento detallado paso a paso.",
+    icon: Calendar,
+    gradient: "from-blue-500 to-indigo-600",
+    category: "Trámites",
+    date: "2025",
+    readTime: "15 min",
+    image: "/images/Blog/cita-previa.png",
+    content: [
+      {
+        type: "intro",
+        text: "Obtener una cita previa para realizar gestiones en el Instituto Nacional de la Seguridad Social (INSS) es un trámite administrativo esencial. Representa el acceso principal para gestionar derechos fundamentales como pensiones y prestaciones. Sin embargo, el proceso puede generar dudas o frustración debido a la alta demanda y la especificidad de los procedimientos."
+      },
+      {
+        type: "paragraph",
+        text: "El objetivo de esta guía es proporcionar un procedimiento detallado, claro y profesional para solicitar, gestionar y comprender el sistema de cita previa del INSS. Este manual está diseñado para eliminar la ambigüedad, asegurar que el ciudadano pueda completar el trámite de forma eficiente y evitar los errores más comunes."
+      },
+      {
+        type: "heading",
+        text: "Diferenciación Clave: INSS frente a TGSS"
+      },
+      {
+        type: "paragraph",
+        text: "Antes de iniciar cualquier solicitud, es crucial distinguir qué entidad gestiona el trámite que necesita. Un error en este paso preliminar es la principal fuente de confusión y resultará en una cita infructuosa."
+      },
+      {
+        type: "highlight",
+        text: "Regla General: INSS gestiona Prestaciones (el cobro de dinero). TGSS gestiona Cotizaciones y Afiliación (el pago de cuotas y la relación laboral)."
+      },
+      {
+        type: "heading",
+        text: "INSS (Instituto Nacional de la Seguridad Social)"
+      },
+      {
+        type: "paragraph",
+        text: "Esta es la entidad encargada de la gestión y administración de las prestaciones del sistema. Debe solicitar cita previa presencial en el INSS para trámites que requieran asesoramiento o presentación de documentación compleja."
+      },
+      {
+        type: "heading",
+        text: "Trámites Principales que Requieren Cita Previa en el INSS:"
+      },
+      {
+        type: "list",
+        items: [
+          "Pensiones: Jubilación (ordinaria, anticipada), incapacidad permanente (revisión, solicitud), viudedad, orfandad y en favor de familiares.",
+          "Ingreso Mínimo Vital (IMV): Solicitud inicial, modificación de datos o resolución de expedientes.",
+          "Prestaciones por nacimiento y cuidado del menor: Anteriormente conocidas como maternidad y paternidad.",
+          "Prestaciones familiares: Asignación por hijo a cargo (para quienes la mantengan) o por nacimiento.",
+          "Tarjeta Sanitaria Europea (TSE): Si bien este trámite se recomienda encarecidamente realizarlo online por su inmediatez, puede solicitarse en un CAISS."
+        ]
+      },
+      {
+        type: "heading",
+        text: "TGSS (Tesorería General de la Seguridad Social)"
+      },
+      {
+        type: "paragraph",
+        text: "Esta entidad gestiona los recursos económicos, la afiliación y la cotización. NO se requiere cita previa presencial para la mayoría de sus trámites, ya que su canal prioritario es el portal Import@ss y la Sede Electrónica."
+      },
+      {
+        type: "heading",
+        text: "Trámites Principales de la TGSS (Mayormente Online – NO requieren cita presencial):"
+      },
+      {
+        type: "list",
+        items: [
+          "Informes de vida laboral: (Trámite 100% online y automático).",
+          "Consultas o duplicados del Número de Afiliación (NAF): (Online).",
+          "Altas, bajas o modificaciones en el Régimen de Autónomos (RETA): (Online).",
+          "Gestión de pagos de cotizaciones, deudas o aplazamientos: (Online o telefónico).",
+          "Asignación de Código de Cuenta de Cotización (CCC) para empleadores."
+        ]
+      },
+      {
+        type: "highlight",
+        text: "Advertencia Crucial: Si usted solicita una cita en el INSS para un trámite que corresponde a la TGSS (como pedir un informe de vida laboral), el personal administrativo no podrá atenderle y le redirigirá a los canales telemáticos."
+      },
+      {
+        type: "heading",
+        text: "¿Es Realmente Necesaria una Cita Presencial? La Era Digital"
+      },
+      {
+        type: "paragraph",
+        text: "La Administración Pública, y la Seguridad Social en particular, fomenta activamente el uso de los canales telemáticos como la vía preferente y más eficiente para la gestión de trámites. Antes de proceder a solicitar una cita presencial, es altamente recomendable verificar si su gestión puede realizarse completamente online."
+      },
+      {
+        type: "paragraph",
+        text: "Muchos trámites pueden realizarse al instante a través del portal \"Tu Seguridad Social\" o la Sede Electrónica del organismo:"
+      },
+      {
+        type: "list",
+        items: [
+          "La solicitud de la Tarjeta Sanitaria Europea (TSE).",
+          "La descarga de certificados de pensionista o de prestaciones.",
+          "La simulación de su futura pensión de jubilación.",
+          "La consulta de sus datos de afiliación y cotización.",
+          "La gestión de altas y bajas en la Seguridad Social para empleadores y autónomos (vía Import@ss)."
+        ]
+      },
+      {
+        type: "paragraph",
+        text: "Para acceder a estos servicios online, necesitará disponer de métodos de identificación digital como Cl@ve Permanente, Cl@ve PIN o Certificado Digital (FNMT)."
+      },
+      {
+        type: "heading",
+        text: "Información Requerida Antes de Iniciar Cualquier Proceso de Cita"
+      },
+      {
+        type: "paragraph",
+        text: "Para agilizar al máximo el proceso de solicitud de cita previa, ya sea por vía telefónica u online, es absolutamente imprescindible tener preparada y a mano la siguiente información. La falta de cualquiera de estos datos detendrá irremediablemente el proceso."
+      },
+      {
+        type: "heading",
+        text: "Datos Indispensables:"
+      },
+      {
+        type: "list",
+        items: [
+          "Documento Nacional de Identidad (DNI) o Número de Identidad de Extranjero (NIE): Deberá tenerlo físicamente o conocer el número exacto.",
+          "Número de Afiliación a la Seguridad Social (NAF): Este es un dato crucial y a menudo causa de confusión. Es un número de 12 dígitos, personal e intransferible. Puede localizarlo en la cabecera de sus nóminas, en contratos de trabajo antiguos, en su informe de vida laboral o en cualquier comunicación oficial recibida de la Seguridad Social.",
+          "Un número de teléfono móvil operativo: Es indispensable y obligatorio. Recibirá un SMS de confirmación con los datos de la cita.",
+          "Una dirección de correo electrónico: Altamente recomendado. Es la mejor forma de recibir un resguardo por escrito de su número localizador y todos los detalles de la cita."
+        ]
+      },
+      {
+        type: "heading",
+        text: "Método Online (El Canal Prioritario y Más Recomendado)"
+      },
+      {
+        type: "paragraph",
+        text: "La vía telemática es, sin lugar a dudas, el método prioritario, más fiable, rápido y que ofrece un registro visual y escrito de la gestión realizada. Se articula en dos opciones principales, dependiendo de si se dispone de identificación digital."
+      },
+      {
+        type: "heading",
+        text: "Opción A: Acceso sin Certificado Digital (Formulario Estándar para la Ciudadanía General)"
+      },
+      {
+        type: "paragraph",
+        text: "Esta opción está diseñada para aquellos ciudadanos que no disponen de Cl@ve o Certificado Digital. Requiere la cumplimentación manual de datos."
+      },
+      {
+        type: "list",
+        items: [
+          "Acceso al Portal Oficial: Ingrese exclusivamente al portal oficial de la Sede Electrónica de la Seguridad Social. La URL directa y segura es: https://sede.seg-social.gob.es. Una vez dentro, deberá localizar la sección \"Cita previa para prestaciones y otras gestiones (INSS)\".",
+          "Identificación Simplificada: Dentro de la sección de cita previa, seleccione la opción \"Obtener Cita\" bajo el epígrafe \"Sin certificado\".",
+          "Cumplimentación de Datos Personales: Rellene el formulario con sus datos personales: Nombre, Apellidos, DNI/NIE, y Teléfono Móvil. Es crucial ser extremadamente preciso; un simple error de transcripción invalidará la cita.",
+          "Selección del Trámite: Deberá seleccionar el motivo exacto de su cita de un menú desplegable. Sea lo más específico posible. Si su trámite es sobre \"Jubilación\", elíjalo explícitamente por encima de categorías más genéricas como \"Pensiones\".",
+          "Selección Geográfica (CAISS): El sistema le solicitará su código postal para identificar los CAISS más cercanos. Si no hay citas disponibles, utilice la opción de búsqueda avanzada o \"por provincia\".",
+          "Selección de Fecha y Hora: El sistema mostrará un calendario interactivo. Los días con disponibilidad suelen aparecer marcados. Seleccione la fecha y la franja horaria.",
+          "Confirmación Final: Revise minuciosamente todos los datos antes de confirmar.",
+          "Obtención del Número Localizador: Al finalizar, el sistema le proporcionará un número localizador de cita (código alfanumérico). Es fundamental conservar este código. Realice una captura de pantalla o anótelo junto con el SMS recibido."
+        ]
+      },
+      {
+        type: "heading",
+        text: "Opción B: Acceso con Identificación Digital (Cl@ve o Certificado Digital)"
+      },
+      {
+        type: "paragraph",
+        text: "Si dispone de Certificado Digital, DNI electrónico o sistema Cl@ve (en sus modalidades PIN o Permanente), este método es el más eficiente, rápido y seguro."
+      },
+      {
+        type: "list",
+        items: [
+          "En el mismo portal oficial (sede.seg-social.gob.es), seleccione la opción de identificación digital correspondiente.",
+          "El sistema validará su identidad de forma automática y rellenará directamente sus datos personales en el formulario, eliminando cualquier posibilidad de error de transcripción.",
+          "El proceso se reduce entonces a seleccionar el trámite deseado, elegir el centro (CAISS) y la hora disponible.",
+          "Beneficio Adicional: Al identificarse digitalmente, el sistema es capaz de detectar que ciertos trámites pueden realizarse de forma 100% online a través del portal \"Tu Seguridad Social\" sin necesidad de una cita presencial."
+        ]
+      },
+      {
+        type: "heading",
+        text: "Método Telefónico (Alternativa para Usuarios sin Acceso a Internet)"
+      },
+      {
+        type: "paragraph",
+        text: "Para aquellos usuarios que no disponen de acceso a internet o prefieren la atención telefónica, existen líneas específicas para la asignación de citas previas."
+      },
+      {
+        type: "heading",
+        text: "Números de Teléfono Oficiales (INSS para Cita Previa):"
+      },
+      {
+        type: "list",
+        items: [
+          "91 541 25 30 (Tarificación provincial estándar. Altamente recomendado).",
+          "901 10 65 70 (Tarificación especial, implica un coste adicional por minuto. Se desaconseja si existe alternativa)."
+        ]
+      },
+      {
+        type: "paragraph",
+        text: "Se recomienda encarecidamente utilizar el número 91 541 25 30, ya que las llamadas a este número están incluidas en la mayoría de tarifas planas de telefonía fija y móvil actuales."
+      },
+      {
+        type: "paragraph",
+        text: "Horario de Atención: El servicio automático de cita previa está disponible las 24 horas del día, los 7 días de la semana. Sin embargo, la opción de atención con un gestor humano suele estar restringida a horarios de oficina (por ejemplo, de 9:00 a 14:30)."
+      },
+      {
+        type: "heading",
+        text: "Proceso Telefónico (Automatizado):"
+      },
+      {
+        type: "list",
+        items: [
+          "Tenga a mano y listos su DNI y su Código Postal antes de iniciar la llamada.",
+          "El sistema automático de voz le solicitará el trámite específico que desea realizar. Hable claro y pausadamente.",
+          "Le pedirá su Código Postal para localizar el CAISS más cercano.",
+          "Le requerirá su número de DNI o NIE.",
+          "Una vez introducidos los datos, el sistema le ofrecerá la primera cita disponible. Podrá aceptarla o solicitar la siguiente.",
+          "Al confirmar la cita, asegúrese de anotar cuidadosamente el número localizador que le facilite la locución."
+        ]
+      },
+      {
+        type: "heading",
+        text: "Estrategias de Actuación Ante la Falta de Disponibilidad de Citas"
+      },
+      {
+        type: "paragraph",
+        text: "Es una situación frecuente que el sistema de cita previa muestre el mensaje: \"No hay citas disponibles\". Este mensaje no debe interpretarse como un error del sistema, sino como un reflejo de que la demanda de citas supera temporalmente la capacidad de atención de los centros."
+      },
+      {
+        type: "heading",
+        text: "Estrategias Recomendadas para Maximizar las Oportunidades:"
+      },
+      {
+        type: "list",
+        items: [
+          "Acceso a Primera Hora (Liberación de Cupos): Los CAISS liberan sus nuevos cupos de citas en el sistema a primera hora de la mañana. Se recomienda encarecidamente acceder al portal justo a las 8:00 AM o en la franja entre las 9:00 y 9:30 AM.",
+          "Insistencia y Monitoreo por Anulaciones: Las citas que otros ciudadanos anulan vuelven a estar disponibles en el sistema en tiempo real. Intentar acceder al sistema varias veces durante el día (especialmente a mediodía o primera hora de la tarde) puede dar resultado.",
+          "Flexibilidad Geográfica: Si el CAISS más cercano a su domicilio no tiene citas, amplíe su búsqueda a todos los centros disponibles en su provincia. Un CAISS situado en un distrito colindante puede tener una disponibilidad mucho mayor."
+        ]
+      },
+      {
+        type: "heading",
+        text: "Consulta y Anulación de Citas – Su Responsabilidad Cívica"
+      },
+      {
+        type: "paragraph",
+        text: "El sistema de cita previa es un recurso público limitado y de gran valor para la ciudadanía. Si sus circunstancias cambian y no puede acudir a la cita previamente concertada, es su responsabilidad cívica y administrativa anularla."
+      },
+      {
+        type: "paragraph",
+        text: "La anulación de una cita se realiza de forma sencilla y rápida a través del mismo portal de cita previa del INSS. Deberá acceder a la sección específica denominada \"Consultar / Anular cita\"."
+      },
+      {
+        type: "paragraph",
+        text: "Para proceder con la consulta o anulación, el sistema le solicitará dos datos clave que obtuvo al reservar la cita:"
+      },
+      {
+        type: "list",
+        items: [
+          "Su DNI/NIE (Documento Nacional de Identidad o Número de Identidad de Extranjero).",
+          "El número localizador que le fue proporcionado al finalizar el proceso de reserva de la cita (ya sea online o telefónicamente)."
+        ]
+      },
+      {
+        type: "highlight",
+        text: "Consecuencias de la No Anulación: La no presentación reiterada a citas sin haber realizado una anulación previa puede ser registrada por el sistema y puede afectar a futuras gestiones."
+      },
+      {
+        type: "heading",
+        text: "Conclusión"
+      },
+      {
+        type: "paragraph",
+        text: "Solicitar una cita previa en el INSS no tiene por qué ser un proceso complejo o frustrante. Con la información adecuada, los documentos necesarios y siguiendo los pasos descritos en esta guía, podrá completar su trámite de forma eficiente."
+      },
+      {
+        type: "paragraph",
+        text: "Recuerde siempre verificar primero si su gestión puede realizarse online, distinga correctamente entre INSS y TGSS, y tenga a mano toda la documentación necesaria antes de iniciar el proceso."
+      },
+      {
+        type: "paragraph",
+        text: "El sistema de cita previa está diseñado para facilitar el acceso a los servicios públicos. Con paciencia, persistencia y la información correcta, obtendrá su cita y podrá realizar su trámite sin complicaciones."
+      }
+    ]
   }
 };
 
