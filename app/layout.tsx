@@ -91,21 +91,9 @@ export default function RootLayout({
         className={`${inter.variable} ${playfair.variable} antialiased`}
       >
         <Script
-          id="adsbygoogle-init"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (adsbygoogle = window.adsbygoogle || []).push({
-                google_ad_client: "ca-pub-2866743279585663",
-                enable_page_level_ads: true
-              });
-            `,
-          }}
-        />
-        <Script
-          async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2866743279585663"
           strategy="beforeInteractive"
+          async
           crossOrigin="anonymous"
         />
         <Suspense fallback={null}>
