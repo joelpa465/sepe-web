@@ -398,6 +398,421 @@ const blogPosts: { [key: string]: any } = {
       }
     ]
   },
+  "ayudas-discapacitados": {
+    title: "Ayudas Disponibles para Personas con Discapacidad o Diversidad Funcional",
+    description: "Guía completa sobre todas las ayudas y prestaciones disponibles para personas con discapacidad: sistema de Seguridad Social, subvenciones autonómicas y locales, y ayudas fiscales.",
+    icon: Heart,
+    gradient: "from-green-500 to-emerald-600",
+    category: "Ayudas",
+    date: "2024",
+    readTime: "12 min",
+    image: "/images/Blog/ayudas-discapacidad.png",
+    content: [
+      {
+        type: "intro",
+        text: "La plena inclusión y el bienestar de las personas con discapacidad o diversidad funcional son pilares fundamentales de la política social en España. Para ello, se ha establecido un amplio abanico de ayudas y prestaciones que buscan garantizar la igualdad de oportunidades, la autonomía personal y la mejora de la calidad de vida."
+      },
+      {
+        type: "paragraph",
+        text: "La elegibilidad para estas ayudas se determina considerando una serie de características individuales, que incluyen: la edad, el tipo y grado de discapacidad (especialmente a partir del 33%, que es el umbral mínimo para la mayoría de los beneficios), el grado de limitación en las actividades diarias, el nivel de dependencia y la situación socioeconómica."
+      },
+      {
+        type: "paragraph",
+        text: "A continuación, se presenta un índice detallado de las principales categorías de ayudas, invitando a una consulta exhaustiva de cada sección para obtener información completa y específica."
+      },
+      {
+        type: "heading",
+        text: "1. Ayudas del Sistema de Seguridad Social"
+      },
+      {
+        type: "paragraph",
+        text: "El Ministerio de Inclusión, Seguridad Social y Migraciones, a través de sus diversos organismos, desempeña un papel fundamental en la provisión de apoyo económico a personas con un determinado grado de discapacidad o diversidad funcional, así como a sus familiares dependientes. Estas prestaciones se estructuran principalmente en dos modalidades:"
+      },
+      {
+        type: "list",
+        items: [
+          "Modalidades Contributivas: Requieren que el beneficiario haya cotizado a la Seguridad Social durante un período mínimo establecido. Son pensiones que se generan a partir de la trayectoria laboral del individuo.",
+          "Modalidades No Contributivas: Dirigidas a quienes carecen de recursos económicos suficientes y no han cotizado lo necesario para acceder a una pensión contributiva. Su objetivo es garantizar un mínimo de subsistencia y se basan en la situación de necesidad."
+        ]
+      },
+      {
+        type: "heading",
+        text: "1.1. Prestaciones Económicas de Incapacidad Temporal"
+      },
+      {
+        type: "paragraph",
+        text: "Estas prestaciones están diseñadas para proteger económicamente a los trabajadores que, debido a una contingencia específica, se encuentran temporalmente incapacitados para realizar su trabajo habitual. Las causas pueden ser: enfermedad común, enfermedad profesional, accidente no laboral o accidente de trabajo."
+      },
+      {
+        type: "list",
+        items: [
+          "Duración: El período inicial de la prestación es de 365 días. No obstante, existe la posibilidad de prorrogar este plazo por otros 180 días adicionales si se prevé que el trabajador tiene posibilidades reales de recuperación y reincorporación a su puesto.",
+          "Objetivo: El propósito primordial de esta prestación es facilitar la recuperación del trabajador, permitiéndole centrarse en su salud sin la preocupación inmediata de la pérdida de ingresos, con el fin último de su reincorporación laboral en las mejores condiciones posibles."
+        ]
+      },
+      {
+        type: "heading",
+        text: "1.2. Prestaciones Económicas por Incapacidad Permanente"
+      },
+      {
+        type: "paragraph",
+        text: "Las prestaciones por incapacidad permanente se conceden a trabajadores que, una vez agotado el tratamiento médico oportuno y las posibilidades de recuperación, presentan reducciones anatómicas o funcionales graves y definitivas. Estas reducciones deben disminuir o anular de forma significativa su capacidad para trabajar."
+      },
+      {
+        type: "paragraph",
+        text: "Para acceder a estas prestaciones, se exige generalmente un período mínimo de cotización, con la notable excepción de los casos derivados de accidente (ya sea laboral o no) o enfermedad profesional, donde no se requiere cotización previa."
+      },
+      {
+        type: "paragraph",
+        text: "Las pensiones de Incapacidad Permanente se clasifican en diferentes grados, dependiendo del alcance de la limitación:"
+      },
+      {
+        type: "list",
+        items: [
+          "Incapacidad Permanente Parcial: Se reconoce cuando el trabajador experimenta una reducción no inferior al 33% en el rendimiento para su profesión habitual. A pesar de esta limitación, el trabajador aún puede continuar desempeñando las tareas fundamentales de su ocupación, aunque con dificultad o con menor eficiencia. Esta modalidad implica una indemnización, no una pensión mensual vitalicia.",
+          "Incapacidad Permanente Total: Esta clasificación inhabilita al trabajador para la realización de todas o las fundamentales tareas de su profesión habitual. Sin embargo, se le considera capacitado para dedicarse a otra actividad laboral diferente. Esta pensión es compatible con la realización de un trabajo distinto al que motivó la incapacidad.",
+          "Incapacidad Permanente Absoluta: Califica al trabajador como impedido para el desempeño de cualquier profesión u oficio. Esto significa que la persona no puede realizar las tareas básicas de ninguna actividad laboral de forma eficiente o segura. Esta modalidad otorga una pensión vitalicia.",
+          "Gran Invalidez: Es el grado más elevado de incapacidad permanente. Se reconoce cuando el trabajador, además de estar afectado por una incapacidad permanente absoluta, necesita la asistencia de otra persona para realizar los actos esenciales de la vida diaria. Estos actos incluyen actividades como comer, vestirse, desplazarse, asearse, etc. La pensión de Gran Invalidez incluye un complemento destinado a retribuir a la persona que asiste al gran inválido."
+        ]
+      },
+      {
+        type: "heading",
+        text: "1.3. Prestaciones Económicas de Invalidez (Modalidad No Contributiva)"
+      },
+      {
+        type: "paragraph",
+        text: "Estas prestaciones están específicamente diseñadas para personas con discapacidad que se encuentran en una situación de necesidad económica, careciendo de recursos suficientes, y que, además, no cumplen con los requisitos de cotización necesarios para acceder a una pensión contributiva. Constituyen una red de seguridad para garantizar un mínimo de protección social."
+      },
+      {
+        type: "heading",
+        text: "Requisitos fundamentales:"
+      },
+      {
+        type: "list",
+        items: [
+          "Edad: Tener una edad comprendida entre los 18 y los 65 años.",
+          "Grado de discapacidad: Acreditar un grado de discapacidad igual o superior al 65%, ya sea psíquica, sensorial o física. Este porcentaje es crucial para determinar la elegibilidad.",
+          "Residencia legal y efectiva: Residir legalmente en España y haberlo hecho durante un período mínimo de 5 años. De estos, al menos 2 años deben ser inmediatamente anteriores a la fecha de solicitud de la prestación.",
+          "Carencia de ingresos suficientes: Los ingresos personales y/o los de la unidad familiar de convivencia (si la hubiera) no deben superar los límites establecidos anualmente por la ley. Estos límites se revisan periódicamente."
+        ]
+      },
+      {
+        type: "heading",
+        text: "Cuantía de la prestación:"
+      },
+      {
+        type: "paragraph",
+        text: "La cuantía de la pensión de invalidez no contributiva está sujeta a las rentas del beneficiario y de su unidad familiar. Existe una cuantía mínima que no puede ser inferior al 25% de la cuantía fijada legalmente para la pensión no contributiva. Además, si el beneficiario requiere de la ayuda o asistencia de una tercera persona para realizar las actividades esenciales de la vida diaria, puede recibir un complemento adicional del 50% sobre la cuantía base de su pensión."
+      },
+      {
+        type: "heading",
+        text: "1.4. Prestaciones por Descendientes con Discapacidad (Modalidad Contributiva)"
+      },
+      {
+        type: "paragraph",
+        text: "Estas prestaciones están dirigidas a trabajadores que han cotizado previamente a la Seguridad Social y tienen a su cargo un descendiente con discapacidad. Su objetivo es brindar un apoyo económico a las familias que afrontan esta situación, reconociendo el esfuerzo y los costes adicionales que implica."
+      },
+      {
+        type: "heading",
+        text: "Requisitos esenciales:"
+      },
+      {
+        type: "list",
+        items: [
+          "Condición de trabajador: Ser un trabajador que ha cumplido con los períodos mínimos de cotización establecidos por la legislación de la Seguridad Social para esta prestación.",
+          "Descendiente a cargo: Tener a cargo un descendiente (hijo/a, nieto/a, etc.) menor de 18 años.",
+          "Grado de discapacidad del descendiente: El descendiente debe tener un grado de discapacidad (sensorial, mental, física o intelectual) igual o superior al 65%. Este porcentaje es fundamental para el reconocimiento de la prestación."
+        ]
+      },
+      {
+        type: "paragraph",
+        text: "Adicionalmente, el grado de dependencia del descendiente se evalúa para determinar el nivel de ayuda que necesita. Los grados de dependencia reconocidos son:"
+      },
+      {
+        type: "list",
+        items: [
+          "Grado I: Dependencia Moderada. La persona necesita ayuda para realizar varias actividades básicas de la vida diaria al menos una vez al día, o tiene necesidades de apoyo intermitente o limitado para su autonomía personal.",
+          "Grado II: Dependencia Severa. La persona necesita ayuda para realizar varias actividades básicas de la vida diaria dos o tres veces al día, pero no requiere la presencia permanente de un cuidador, o tiene necesidades de apoyo extenso para su autonomía personal.",
+          "Grado III: Gran Dependencia. La persona necesita ayuda para realizar varias actividades básicas de la vida diaria varias veces al día y, por su pérdida total de autonomía física, mental, intelectual o sensorial, necesita el apoyo indispensable y continuo de otra persona o tiene necesidades de apoyo generalizado para su autonomía personal."
+        ]
+      },
+      {
+        type: "heading",
+        text: "1.5. Prestaciones por Descendientes con Discapacidad (Modalidad No Contributiva)"
+      },
+      {
+        type: "paragraph",
+        text: "A diferencia de la modalidad contributiva, estas prestaciones económicas están destinadas a solicitantes que, si bien tienen a su cargo un descendiente en situación de discapacidad, no han cumplido con las cotizaciones mínimas estipuladas por el sistema de Seguridad Social. La clave para acceder a ellas es la demostración de una situación de necesidad económica."
+      },
+      {
+        type: "heading",
+        text: "Requisitos principales:"
+      },
+      {
+        type: "list",
+        items: [
+          "Carencia de cotizaciones mínimas: El solicitante no debe haber cotizado el período mínimo exigido para acceder a las prestaciones contributivas.",
+          "Descendiente a cargo: Tener a cargo un hijo o descendiente menor de 18 años o, en su caso, mayor de edad, que presente una minusvalía en un grado igual o superior al 65%.",
+          "Acogimiento y dependencia: El descendiente debe estar acogido familiarmente por el solicitante y depender económicamente de este, formando parte de su unidad familiar.",
+          "Carencia de recursos económicos: Los ingresos del solicitante y su unidad familiar no deben superar los umbrales económicos establecidos anualmente."
+        ]
+      },
+      {
+        type: "heading",
+        text: "1.6. Prestación por Padre o Madre con Discapacidad"
+      },
+      {
+        type: "paragraph",
+        text: "Estas ayudas se dirigen a trabajadores que tienen a su progenitor o progenitora con discapacidad a cargo. Se otorga una cuantía estipulada reglamentariamente cuando la discapacidad del padre o la madre es igual o superior al 65%. De manera recíproca, esta prestación también aplica a una madre o padre con discapacidad (a partir del 65%) que tenga un hijo a cargo. La finalidad es reconocer la carga que supone el cuidado de un familiar dependiente y ofrecer un soporte económico."
+      },
+      {
+        type: "heading",
+        text: "2. Ayudas Económicas Individuales (Subvenciones Autonómicas y Locales)"
+      },
+      {
+        type: "paragraph",
+        text: "Más allá de las prestaciones que emanan directamente del sistema de Seguridad Social, existe una importante variedad de subvenciones y ayudas específicas gestionadas por las Comunidades Autónomas y los Ayuntamientos. Estas ayudas tienen como objetivo principal mejorar la calidad de vida, fomentar la autonomía personal y promover la plena integración de las personas con discapacidad en su entorno."
+      },
+      {
+        type: "paragraph",
+        text: "Es fundamental destacar que, debido a la naturaleza descentralizada de estas ayudas, las condiciones exactas, los plazos de solicitud, los importes y los criterios de elegibilidad pueden variar considerablemente de una Comunidad Autónoma a otra y entre diferentes Ayuntamientos. No obstante, las directrices nacionales suelen establecer las líneas generales sobre las que se articulan estas políticas."
+      },
+      {
+        type: "heading",
+        text: "2.1. Subvenciones para Vivienda"
+      },
+      {
+        type: "paragraph",
+        text: "El acceso a una vivienda adecuada y adaptada es un derecho fundamental. El Plan Estatal de Vivienda 2022-2025 (regulado por el Real Decreto 42/2022, de 18 de enero) incorpora programas específicos y de vital importancia para personas mayores y personas con discapacidad. Estos programas buscan facilitar tanto el acceso a la vivienda como la adaptación de las existentes para garantizar su habitabilidad y accesibilidad."
+      },
+      {
+        type: "heading",
+        text: "Ayudas para Compra o Alquiler de Vivienda Adaptada:"
+      },
+      {
+        type: "list",
+        items: [
+          "Requisitos de la Vivienda: Para ser elegible, la vivienda debe ser de nueva construcción, haber sido objeto de una rehabilitación reciente, o ser cedida para uso exclusivo por personas mayores de 65 años o personas con discapacidad y su núcleo familiar. Es crucial que la vivienda se mantenga en este uso durante un plazo mínimo de 40 años. Además, un criterio importante es que la vivienda esté situada en un entorno que cuente con servicios cercanos y accesibles, tales como centros de salud, centros de rehabilitación, servicios de asistencia social y opciones de recreación.",
+          "Beneficiarios (Propietarios de Inmuebles): Los propietarios de viviendas que se comprometan a destinar sus inmuebles al alquiler o cesión a personas con discapacidad pueden recibir subvenciones para llevar a cabo el acondicionamiento necesario de la vivienda. Esto incluye reformas que garanticen la accesibilidad universal y la habitabilidad óptima, adaptada a la diversidad funcional del futuro inquilino o propietario.",
+          "Precio Límite: El precio máximo establecido para el alquiler o la cesión de estas viviendas no puede superar los 9,5 euros por metro cuadrado de área útil. Este límite busca asegurar la asequibilidad.",
+          "Límites de Ingresos (Familiares con persona con discapacidad): Para las familias que incluyen a una persona con discapacidad, se establecen límites de ingresos para ser beneficiarios de estas ayudas. Generalmente, los ingresos de la unidad familiar no deben superar los 30.119 euros anuales. Este umbral se eleva a 37.648 euros anuales en el caso de familias donde reside una persona con un elevado grado de discapacidad, reconociendo los mayores gastos asociados."
+        ]
+      },
+      {
+        type: "heading",
+        text: "Subvenciones para Adaptación de Vivienda:"
+      },
+      {
+        type: "list",
+        items: [
+          "Objetivo: Estas ayudas están destinadas a financiar las reformas necesarias dentro de la vivienda para ajustarla a las necesidades específicas de la persona con discapacidad. Esto puede incluir la adaptación de cocinas, baños, dormitorios u otras áreas para facilitar la autonomía y la seguridad.",
+          "Eliminación de Barreras Arquitectónicas: Una parte fundamental de estas subvenciones cubre la eliminación de barreras arquitectónicas, tanto en el interior del hogar como en los accesos al mismo. Esto abarca una amplia gama de soluciones, como la instalación de rampas para salvar desniveles, sillas salvaescaleras o plataformas salvaescaleras para garantizar la accesibilidad vertical en escaleras, ascensores domésticos para edificios sin ascensor o para viviendas unifamiliares, y grúas de techo o de bipedestación para facilitar los traslados de personas con gran dependencia. El objetivo es garantizar una accesibilidad total, tanto vertical como horizontal, dentro del hogar."
+        ]
+      },
+      {
+        type: "heading",
+        text: "2.2. Subvenciones para Movilidad"
+      },
+      {
+        type: "paragraph",
+        text: "La autonomía en el desplazamiento es crucial para la integración social y laboral. Estas ayudas están específicamente diseñadas para facilitar la movilidad de personas con discapacidad motora o movilidad reducida, abarcando tanto el movimiento dentro del hogar como el desplazamiento exterior."
+      },
+      {
+        type: "heading",
+        text: "Adquisición de Productos de Asistencia:"
+      },
+      {
+        type: "list",
+        items: [
+          "Sillas de ruedas: Manuales o eléctricas, adaptadas a las necesidades individuales.",
+          "Scooters eléctricos: Para desplazamientos autónomos en distancias medias.",
+          "Andadores: Para personas con dificultades de equilibrio o que necesitan apoyo para caminar.",
+          "Otros dispositivos: Como muletas, bastones, sistemas de propulsión adaptados, etc."
+        ]
+      },
+      {
+        type: "heading",
+        text: "Procedimiento de Solicitud:"
+      },
+      {
+        type: "paragraph",
+        text: "Para informarse sobre los requisitos específicos y el proceso de solicitud, las personas interesadas pueden acudir a:"
+      },
+      {
+        type: "list",
+        items: [
+          "Servicio Social del Ayuntamiento: Los servicios sociales municipales son un primer punto de contacto para asesoramiento e información sobre ayudas locales y autonómicas.",
+          "IMSERSO (Instituto de Mayores y Servicios Sociales): Este organismo, a través de sus delegaciones territoriales y en coordinación con las Comunidades Autónomas, gestiona y proporciona información sobre diversas ayudas, especialmente las relacionadas con la Ley de Promoción de la Autonomía Personal y Atención a las personas en situación de dependencia. La vía exacta dependerá de la comunidad autónoma de residencia."
+        ]
+      },
+      {
+        type: "heading",
+        text: "2.3. Subvenciones para Vehículos"
+      },
+      {
+        type: "paragraph",
+        text: "La adquisición y adaptación de vehículos es fundamental para la autonomía de muchas personas con discapacidad. Para ello, existen diversas exenciones fiscales y beneficios que buscan reducir la carga económica:"
+      },
+      {
+        type: "heading",
+        text: "Descuento en el Precio:"
+      },
+      {
+        type: "paragraph",
+        text: "Algunos concesionarios de vehículos tienen políticas de descuentos directos para solicitantes que acrediten un certificado de discapacidad. Es imprescindible demostrar que el vehículo será para uso personal de la persona con discapacidad o para su transporte habitual."
+      },
+      {
+        type: "heading",
+        text: "Exoneraciones Fiscales:"
+      },
+      {
+        type: "list",
+        items: [
+          "Impuesto de Matriculación: Las personas con un grado de discapacidad igual o superior al 33% están exentas de pagar el Impuesto de Matriculación al adquirir un vehículo nuevo.",
+          "Impuesto de Circulación (Impuesto sobre Vehículos de Tracción Mecánica - IVTM): Existe una exención total de este impuesto para vehículos registrados a nombre de personas con discapacidad, siempre que se cumplan ciertos requisitos sobre el uso del vehículo.",
+          "Reducción del IVA: Se aplica un tipo de IVA superreducido (actualmente 4%) en la compra de vehículos nuevos destinados a personas con discapacidad severa (generalmente igual o superior al 33% y con movilidad reducida reconocida) y para la adaptación de vehículos ya existentes. Esta reducción es significativa.",
+          "Tarjeta de Estacionamiento Reservado: Esta tarjeta, de carácter personal e intransferible, permite estacionar en las plazas reservadas para personas con movilidad reducida. En muchas localidades, también habilita para estacionar en zonas de estacionamiento regulado sin coste o con condiciones especiales."
+        ]
+      },
+      {
+        type: "heading",
+        text: "Subvenciones para Adaptación de Vehículos:"
+      },
+      {
+        type: "list",
+        items: [
+          "Finalidad: Se conceden ayudas específicas para modificar un vehículo existente con los sistemas de conducción o transporte adaptados que la persona necesite. Esto puede incluir mandos adaptados, sistemas de anclaje para sillas de ruedas, rampas de acceso, elevadores, asientos giratorios, etc.",
+          "Requisito: Es indispensable demostrar la propiedad del vehículo que se desea adaptar.",
+          "Tramitación: La solicitud y gestión de estas ayudas se realiza generalmente a través de la Dirección General de Servicios Sociales o el organismo equivalente de cada Comunidad Autónoma."
+        ]
+      },
+      {
+        type: "heading",
+        text: "Ayudas para Desplazamiento en Transporte:"
+      },
+      {
+        type: "paragraph",
+        text: "Para aquellas personas que no poseen vehículo propio o no pueden utilizarlo, existen subvenciones que cubren parte de los costes de transporte público o transporte adaptado. Estas ayudas son fundamentales para asistir a terapias, centros de trabajo, centros educativos o cualquier otra actividad esencial, fomentando la autonomía y la participación social."
+      },
+      {
+        type: "heading",
+        text: "2.4. Subvenciones para Formación, Estudio y Deporte"
+      },
+      {
+        type: "paragraph",
+        text: "Estas subvenciones son clave para garantizar la igualdad de oportunidades en el ámbito educativo, la capacitación profesional y la participación en actividades deportivas y culturales. Su objetivo es derribar barreras y facilitar el acceso de las personas con discapacidad a estas áreas vitales."
+      },
+      {
+        type: "heading",
+        text: "Cobertura:"
+      },
+      {
+        type: "list",
+        items: [
+          "Matriculación: Financiación de las tasas de matriculación en instituciones educativas (universidades, centros de formación profesional, escuelas de idiomas, etc.).",
+          "Material didáctico adaptado: Ayudas para la adquisición de libros en formatos accesibles, software específico, dispositivos de apoyo a la comunicación, lupas, teclados adaptados, etc.",
+          "Transporte especializado: Subvenciones para cubrir los costes de un transporte adaptado que permita a la persona con discapacidad asistir a su centro educativo o de formación.",
+          "Alimentación: En algunos casos, pueden cubrir gastos de alimentación asociados a la asistencia a centros o residencias.",
+          "Asignación de residencias adaptadas: Ayudas para el alojamiento en residencias universitarias o de estudiantes que cuenten con las adaptaciones necesarias.",
+          "Inscripción y material deportivo adaptado: Subvenciones para la inscripción en clubes o eventos deportivos, así como para la adquisición de material deportivo específico (sillas de ruedas deportivas, prótesis para deporte, etc.)."
+        ]
+      },
+      {
+        type: "heading",
+        text: "Entidades Promotoras:"
+      },
+      {
+        type: "paragraph",
+        text: "Organizaciones como la Fundación ONCE son un referente en España en la promoción de la formación, el empleo y la accesibilidad para personas con discapacidad. Ofrecen una gran variedad de becas, programas de formación, ayudas para el emprendimiento y apoyo al deporte. Se recomienda encarecidamente consultar sus programas específicos y convocatorias, ya que son una fuente importante de recursos y oportunidades. Otras entidades públicas y privadas, así como federaciones deportivas, también ofrecen programas en este ámbito."
+      },
+      {
+        type: "heading",
+        text: "3. Ayudas Fiscales"
+      },
+      {
+        type: "paragraph",
+        text: "Las personas con un Certificado de Discapacidad o tarjeta acreditativa con un porcentaje igual o superior al 33% tienen derecho a acceder a diversas ayudas y beneficios fiscales. Estas ventajas se implementan tanto a nivel estatal como autonómico y local, por lo que es fundamental consultar la normativa específica en el Ayuntamiento o la Agencia Tributaria autonómica correspondiente para conocer todos los detalles."
+      },
+      {
+        type: "heading",
+        text: "Las principales ayudas fiscales incluyen:"
+      },
+      {
+        type: "list",
+        items: [
+          "Disminución del Impuesto sobre la Renta de las Personas Físicas (IRPF): Se aplican deducciones y reducciones en la base imponible o en la cuota del IRPF, tanto para la propia persona con discapacidad (por ejemplo, por gastos sanitarios o por la propia discapacidad) como para los familiares que la tienen a cargo. El mínimo personal y familiar por discapacidad incrementa la parte de la renta que no tributa, tanto para el contribuyente con discapacidad como para sus ascendientes o descendientes con discapacidad a cargo.",
+          "Exoneración de Impuestos de Vehículos: Exención total del Impuesto de Matriculación y del Impuesto sobre Vehículos de Tracción Mecánica (IVTM) / Impuesto de Circulación para vehículos registrados a nombre de personas con discapacidad.",
+          "Disminución del IVA: Se aplica el tipo superreducido (4%) en la adquisición de una serie de bienes y servicios esenciales: vehículos para personas con discapacidad con movilidad reducida, productos sanitarios (prótesis, órtesis, material ortopédico), servicios de teleasistencia, adaptación de viviendas, servicios de asistencia personal, etc.",
+          "Bonificaciones en el Impuesto de Patrimonio y Ley de Sucesiones y Donaciones: Se aplican bonificaciones, reducciones en la base imponible o incluso exenciones en estos impuestos. Esto beneficia tanto a las propias personas con discapacidad que posean patrimonio, como a aquellos que reciban herencias o donaciones en su favor, facilitando la transmisión de bienes y el acceso a recursos. Las particularidades varían mucho según la Comunidad Autónoma, ya que tienen amplias competencias en estos impuestos."
+        ]
+      },
+      {
+        type: "heading",
+        text: "Preguntas Frecuentes (FAQ) sobre Ayudas para Personas con Discapacidad"
+      },
+      {
+        type: "paragraph",
+        text: "Para facilitar la comprensión y el acceso a la información, se responden algunas de las preguntas más comunes relacionadas con las ayudas y beneficios para personas con discapacidad:"
+      },
+      {
+        type: "heading",
+        text: "Q1: ¿Cómo se obtiene el certificado de discapacidad?"
+      },
+      {
+        type: "paragraph",
+        text: "El certificado de discapacidad es el documento oficial que acredita el grado de discapacidad de una persona. Se solicita en los Centros de Valoración y Orientación de Personas con Discapacidad dependientes de la Consejería de Bienestar Social (o el organismo equivalente) de cada Comunidad Autónoma. El proceso implica una evaluación integral por parte de un equipo multidisciplinar (médicos, psicólogos, trabajadores sociales) que valorará las limitaciones funcionales, las barreras del entorno y el impacto en la vida diaria de la persona, determinando finalmente el grado de discapacidad en porcentaje."
+      },
+      {
+        type: "heading",
+        text: "Q2: ¿Qué significa \"grado de discapacidad del 33% o superior\"?"
+      },
+      {
+        type: "paragraph",
+        text: "El 33% es el umbral mínimo establecido por la legislación española para que una persona con discapacidad pueda acceder a la gran mayoría de las ayudas, beneficios fiscales y derechos específicos (como la reserva de empleo público, ventajas en transporte, etc.). Un grado de discapacidad inferior a este porcentaje, aunque reconozca algún tipo de limitación, generalmente no da acceso a los mismos derechos y beneficios. Es el punto de partida para ser considerado legalmente como persona con discapacidad a efectos de la aplicación de la normativa de protección y fomento de la igualdad de oportunidades."
+      },
+      {
+        type: "heading",
+        text: "Q3: ¿Las ayudas son compatibles entre sí?"
+      },
+      {
+        type: "paragraph",
+        text: "La compatibilidad de las diferentes ayudas es una cuestión fundamental y compleja que depende de la naturaleza específica de cada ayuda. Es crucial consultar las bases de cada convocatoria o la normativa reguladora."
+      },
+      {
+        type: "list",
+        items: [
+          "Incompatibilidad: Algunas prestaciones son incompatibles entre sí, especialmente si tienen la misma finalidad o derivan del mismo hecho causante (por ejemplo, dos pensiones de la Seguridad Social por la misma incapacidad). La percepción de una pensión de invalidez no contributiva suele ser incompatible con una pensión de la Seguridad Social.",
+          "Compatibilidad: Muchas otras ayudas son compatibles. Por ejemplo, es común que una persona perciba una prestación por discapacidad y, a la vez, reciba una subvención para la adaptación de su vivienda, una ayuda para la movilidad o beneficios fiscales. Las ayudas para el fomento del empleo o la formación también suelen ser compatibles con las pensiones."
+        ]
+      },
+      {
+        type: "highlight",
+        text: "Recomendación: Ante cualquier duda, la mejor práctica es informarse detalladamente en los organismos gestores de cada ayuda o consultar con un profesional (trabajador social, abogado especializado) para evitar incurrir en incompatibilidades que puedan acarrear la suspensión o devolución de las prestaciones."
+      },
+      {
+        type: "heading",
+        text: "Q4: ¿Dónde puedo obtener información personalizada?"
+      },
+      {
+        type: "paragraph",
+        text: "Para obtener información específica y adaptada a su caso particular, se recomienda encarecidamente acudir a las siguientes fuentes:"
+      },
+      {
+        type: "list",
+        items: [
+          "Los Centros de Atención Primaria de Servicios Sociales de su Ayuntamiento: Son el primer escalón y la puerta de entrada al sistema de servicios sociales. Ofrecen asesoramiento general, información sobre recursos locales, ayudas municipales y orientación sobre cómo acceder a otros niveles de la administración.",
+          "Las Consejerías de Bienestar Social o Asuntos Sociales de su Comunidad Autónoma: Estos organismos gestionan la mayoría de las políticas autonómicas de discapacidad, incluyendo el certificado de discapacidad, ayudas a la dependencia, programas de vivienda, empleo y mucho más.",
+          "Organizaciones y asociaciones de personas con discapacidad (ONCE, CERMI, etc.): Estas entidades, como la Organización Nacional de Ciegos Españoles (ONCE) o el Comité Español de Representantes de Personas con Discapacidad (CERMI), son una fuente inestimable de información, asesoramiento y apoyo. Tienen una vasta experiencia y conocimiento de los derechos y recursos disponibles, además de ofrecer sus propios programas.",
+          "La Sede Electrónica de la Seguridad Social: Para todo lo relacionado con prestaciones y pensiones del sistema de Seguridad Social (incapacidad temporal, permanente, prestaciones por descendientes, etc.), su página web y sus oficinas son el canal oficial para la información y la gestión.",
+          "Agencia Tributaria: Para consultas sobre ayudas y beneficios fiscales, tanto a nivel estatal como autonómico, la Agencia Tributaria y las Haciendas Autonómicas ofrecen información detallada y servicios de asesoramiento."
+        ]
+      },
+      {
+        type: "paragraph",
+        text: "Es fundamental recordar que la información y los requisitos pueden actualizarse, por lo que siempre es recomendable verificar los datos más recientes en las fuentes oficiales."
+      }
+    ]
+  },
   "cita-previa-seguridad-social": {
     title: "Cómo Solicitar Cita Previa en el Instituto Nacional de la Seguridad Social (INSS)",
     description: "Guía completa para solicitar, gestionar y comprender el sistema de cita previa del INSS. Procedimiento detallado paso a paso.",

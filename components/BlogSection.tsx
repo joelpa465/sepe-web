@@ -57,15 +57,16 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: "ayudas-discapacitados",
-    title: "Ayudas y Prestaciones para Personas con Discapacidad en 2024",
+    title: "Ayudas y Prestaciones para Personas con Discapacidad o Diversidad Funcional",
     description: "Descubre todas las ayudas y beneficios disponibles para personas con discapacidad: prestaciones económicas, ayudas técnicas, beneficios fiscales y acceso a vivienda protegida.",
     icon: <Heart className="w-8 h-8" />,
     gradient: "from-green-500 to-emerald-600",
     category: "Ayudas",
     date: "12 OCT 2024",
-    readTime: "8 min",
+    readTime: "12 min",
     author: "Equipo SEPE",
-    location: "España"
+    location: "España",
+    image: "/images/Blog/ayudas-discapacidad.png"
   },
   {
     id: "prestacion-desempleo",
