@@ -787,8 +787,8 @@ export default async function BlogPost({ params }: { params: Promise<{ id: strin
                       <Image
                         src={post.image}
                         alt={post.title}
-                        width={1200}
-                        height={600}
+                        width={894}
+                        height={826}
                         className="w-full h-auto"
                         priority
                       />
