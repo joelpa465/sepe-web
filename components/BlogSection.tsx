@@ -8,12 +8,14 @@ import {
   DollarSign, 
   GraduationCap,
   Building,
-  Users
+  Users,
+  Clock
 } from "lucide-react";
 import Link from "next/link";
 import AdSidebar from "./AdSidebar";
 import { useState, useEffect } from "react";
 import { blogPosts } from "@/lib/data";
+import Image from "next/image";
 
 interface BlogPost {
   id: string;
@@ -57,71 +59,6 @@ const imageMap: { [key: string]: string } = {
   "cita-previa-seguridad-social": "/images/Blog/cita-previa.png",
   "ayudas-discapacitados": "/images/Blog/ayudas-discapacidad.png",
 };
-
-// Componente individual para cada post con manejo de errores de imagen
-function BlogPostItem({ post, index, total }: { post: BlogPost; index: number; total: number }) {
-  const [imageError, setImageError] = useState(false);
-
-  return (
-    <div>
-      <Link href={`/blog/${post.id}`} className="block group">
-        <article className="flex gap-6 py-8 hover:bg-gray-50 transition-colors">
-          {/* Imagen */}
-          <div className="flex-shrink-0">
-            {post.image && !imageError ? (
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden bg-gray-100">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  onError={() => {
-                    setImageError(true);
-                  }}
-                />
-              </div>
-            ) : (
-              <div className={`w-32 h-32 md:w-40 md:h-40 rounded-lg bg-gradient-to-br ${post.gradient} flex items-center justify-center text-white shadow-md`}>
-                {post.icon}
-              </div>
-            )}
-          </div>
-
-          {/* Contenido */}
-          <div className="flex-1 min-w-0">
-            {/* Categoría */}
-            <div className="mb-2">
-              <span className="text-xs font-normal text-gray-400 uppercase tracking-wider" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                {post.category}
-              </span>
-            </div>
-
-            {/* Título */}
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-tight" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-              {post.title}
-            </h3>
-
-            {/* Autor y Fecha */}
-            <div className="mb-3">
-              <p className="text-sm text-gray-400 font-normal" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                {post.author || 'Equipo SEPE'} | {post.location || 'España'} | {post.date}
-              </p>
-            </div>
-
-            {/* Descripción */}
-            <p className="text-base text-gray-700 leading-relaxed line-clamp-3" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-              {post.description}
-            </p>
-          </div>
-        </article>
-      </Link>
-      
-      {/* Separador (excepto en el último) */}
-      {index < total - 1 && (
-        <div className="border-t border-gray-200"></div>
-      )}
-    </div>
-  );
-}
 
 export default function BlogSection() {
   const [sortedPosts, setSortedPosts] = useState<BlogPost[]>([]);
@@ -206,31 +143,170 @@ export default function BlogSection() {
     );
   }
 
+  // Separar posts: el primero tiene imagen destacada, los demás van a la izquierda
+  const featuredPost = sortedPosts[0];
+  const leftColumnPosts = sortedPosts.slice(1, 4); // Próximos 3 posts
+  const rightColumnPosts = sortedPosts.slice(4, 8); // Últimos 4 posts
+
   return (
-    <section id="blogs" className="py-16 bg-white">
+    <section id="blogs" className="py-16 bg-white border-t border-gray-200">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+        <div className="mb-12">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Georgia, serif' }}>
             Blogs
           </h2>
         </div>
 
-        {/* Layout: Contenido principal + Sidebar */}
-        <div className="flex gap-8">
-          {/* Contenido principal - Lista vertical */}
-          <div className="flex-1 max-w-4xl">
-            <div className="space-y-0">
-              {sortedPosts.map((post, index) => (
-                <BlogPostItem key={post.id} post={post} index={index} total={sortedPosts.length} />
-              ))}
-            </div>
+        {/* Layout de 3 columnas estilo NYT */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          {/* Columna Izquierda - Artículos principales (texto) */}
+          <div className="lg:col-span-3 space-y-8">
+            {leftColumnPosts.map((post, index) => (
+              <Link key={post.id} href={`/blog/${post.id}`} className="block group">
+                <article className="border-b border-gray-200 pb-6 last:border-b-0">
+                  {/* Categoría */}
+                  <div className="mb-2">
+                    <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      {post.category}
+                    </span>
+                  </div>
+                  
+                  {/* Título */}
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+                    {post.title}
+                  </h3>
+                  
+                  {/* Descripción */}
+                  <p className="text-sm text-gray-700 leading-relaxed mb-3 line-clamp-3">
+                    {post.description}
+                  </p>
+                  
+                  {/* Meta información */}
+                  <div className="flex items-center gap-3 text-xs text-gray-500">
+                    <span>{post.date}</span>
+                    <span>•</span>
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-3 h-3" />
+                      {post.readTime}
+                    </span>
+                  </div>
+                </article>
+              </Link>
+            ))}
           </div>
 
-          {/* Sidebar derecho - Publicidad (solo en desktop) */}
-          <div className="hidden xl:block w-80 flex-shrink-0">
-            <div className="sticky top-24">
+          {/* Columna Central - Artículo destacado con imagen grande */}
+          <div className="lg:col-span-6">
+            {featuredPost && (
+              <Link href={`/blog/${featuredPost.id}`} className="block group">
+                <article>
+                  {/* Imagen destacada */}
+                  <div className="mb-4">
+                    {featuredPost.image ? (
+                      <div className="relative w-full h-96 md:h-[500px] overflow-hidden bg-gray-100">
+                        <Image
+                          src={featuredPost.image}
+                          alt={featuredPost.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                    ) : (
+                      <div className={`w-full h-96 md:h-[500px] bg-gradient-to-br ${featuredPost.gradient} flex items-center justify-center`}>
+                        <div className="text-white text-6xl">
+                          {featuredPost.icon}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Categoría */}
+                  <div className="mb-2">
+                    <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      {featuredPost.category}
+                    </span>
+                  </div>
+
+                  {/* Título principal */}
+                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+                    {featuredPost.title}
+                  </h3>
+
+                  {/* Descripción */}
+                  <p className="text-base text-gray-700 leading-relaxed mb-4">
+                    {featuredPost.description}
+                  </p>
+
+                  {/* Meta información */}
+                  <div className="flex items-center gap-3 text-sm text-gray-500">
+                    <span>{featuredPost.author || 'Equipo SEPE'}</span>
+                    <span>•</span>
+                    <span>{featuredPost.date}</span>
+                    <span>•</span>
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-4 h-4" />
+                      {featuredPost.readTime} de lectura
+                    </span>
+                  </div>
+                </article>
+              </Link>
+            )}
+          </div>
+
+          {/* Columna Derecha - Sidebar con artículos destacados */}
+          <div className="lg:col-span-3">
+            {/* Publicidad */}
+            <div className="mb-8">
               <AdSidebar position="right" />
+            </div>
+
+            {/* Artículos destacados */}
+            <div className="space-y-6">
+              <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">
+                Más Leídos
+              </h4>
+              
+              {rightColumnPosts.map((post) => (
+                <Link key={post.id} href={`/blog/${post.id}`} className="block group">
+                  <article className="border-b border-gray-200 pb-6 last:border-b-0">
+                    {/* Mini imagen o icono */}
+                    <div className="mb-3">
+                      {post.image ? (
+                        <div className="relative w-full h-32 overflow-hidden bg-gray-100 rounded">
+                          <Image
+                            src={post.image}
+                            alt={post.title}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                      ) : (
+                        <div className={`w-full h-32 bg-gradient-to-br ${post.gradient} flex items-center justify-center rounded`}>
+                          <div className="text-white text-3xl">
+                            {post.icon}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Título */}
+                    <h4 className="text-base font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors leading-tight line-clamp-2" style={{ fontFamily: 'Georgia, serif' }}>
+                      {post.title}
+                    </h4>
+
+                    {/* Meta información */}
+                    <div className="flex items-center gap-2 text-xs text-gray-500">
+                      <span>{post.date}</span>
+                      <span>•</span>
+                      <span className="flex items-center gap-1">
+                        <Clock className="w-3 h-3" />
+                        {post.readTime}
+                      </span>
+                    </div>
+                  </article>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
