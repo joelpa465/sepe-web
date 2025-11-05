@@ -3,8 +3,16 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AdSidebar from "@/components/AdSidebar";
 import AdBanner from "@/components/AdBanner";
-import PageIcon from "@/components/PageIcon";
 import Link from "next/link";
+import { 
+  Calendar, 
+  XCircle, 
+  Building2, 
+  Globe, 
+  FileText, 
+  Car,
+  Lightbulb
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Cita Previa - SEPE, Seguridad Social, Hacienda y Más",
@@ -20,42 +28,48 @@ const citas = [
     id: "cita-previa-inem",
     title: "Cita Previa INEM (SEPE)",
     description: "Cómo solicitar cita previa en el SEPE para renovar paro, consultar prestaciones o realizar otros trámites. Tutorial paso a paso.",
-    icon: "📅",
+    icon: Calendar,
+    gradient: "from-blue-500 to-blue-600",
     link: "/tutoriales/cita-previa-inem"
   },
   {
     id: "anular-cita-sepe",
     title: "Anular Cita Previa INEM",
     description: "Guía para anular una cita previa ya concertada en el SEPE. Pasos y requisitos para cancelar tu cita.",
-    icon: "🚫",
+    icon: XCircle,
+    gradient: "from-red-500 to-red-600",
     link: "/tutoriales/anular-cita-sepe"
   },
   {
     id: "cita-previa-seguridad-social",
     title: "Cita Previa Seguridad Social",
     description: "Solicitar cita previa en la Seguridad Social para pensiones, bajas, certificados o consultas. Proceso completo.",
-    icon: "🏥",
+    icon: Building2,
+    gradient: "from-green-500 to-green-600",
     link: "/tutoriales/cita-previa-seguridad-social"
   },
   {
     id: "cita-previa-extranjeria",
     title: "Cita Previa Extranjería",
     description: "Cómo pedir cita en Extranjería para renovar NIE, visados, residencia y otros trámites de inmigración.",
-    icon: "🌍",
+    icon: Globe,
+    gradient: "from-purple-500 to-purple-600",
     link: "/tutoriales/cita-previa-extranjeria"
   },
   {
     id: "cita-previa-hacienda",
     title: "Cita Previa Hacienda",
     description: "Solicitar cita previa en Hacienda para consultas fiscales, declaraciones o certificados tributarios.",
-    icon: "🧾",
+    icon: FileText,
+    gradient: "from-orange-500 to-orange-600",
     link: "/tutoriales/cita-previa-hacienda"
   },
   {
     id: "cita-previa-dgt",
     title: "Cita Previa DGT",
     description: "Cita previa en la DGT para renovar carnet, cambiarlo, modificaciones de vehículo o consultas de tráfico.",
-    icon: "🚗",
+    icon: Car,
+    gradient: "from-indigo-500 to-indigo-600",
     link: "/tutoriales/cita-previa-dgt"
   }
 ];
@@ -71,7 +85,9 @@ export default function CitaPreviaPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <div className="mb-6">
-                <PageIcon emoji="📅" />
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm text-white shadow-lg">
+                  <Calendar className="w-10 h-10" />
+                </div>
               </div>
               <h1 className="text-4xl sm:text-5xl font-bold mb-4">
                 Citas Previas
@@ -115,19 +131,24 @@ export default function CitaPreviaPage() {
                 </div>
                 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {citas.map((cita) => (
-                    <Link key={cita.id} href={cita.link}>
-                      <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow p-6 border border-gray-200 h-full">
-                        <div className="text-4xl mb-4">{cita.icon}</div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2 hover:text-blue-600 transition-colors">
-                          {cita.title}
-                        </h3>
-                        <p className="text-gray-600">
-                          {cita.description}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
+                  {citas.map((cita) => {
+                    const Icon = cita.icon;
+                    return (
+                      <Link key={cita.id} href={cita.link} className="group">
+                        <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all p-6 border border-gray-200 h-full flex flex-col">
+                          <div className={`inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br ${cita.gradient} text-white mb-4 group-hover:scale-110 transition-transform`}>
+                            <Icon className="w-7 h-7" />
+                          </div>
+                          <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                            {cita.title}
+                          </h3>
+                          <p className="text-gray-600 flex-1">
+                            {cita.description}
+                          </p>
+                        </div>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
               
@@ -152,12 +173,21 @@ export default function CitaPreviaPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <div className="bg-blue-50 border-l-4 border-blue-600 p-6">
-                <h3 className="text-lg font-bold text-blue-900 mb-2">💡 Consejo Importante</h3>
-                <p className="text-blue-800">
-                  Las citas previas suelen tener alta demanda. Te recomendamos revisar la disponibilidad 
-                  regularmente y no esperar al último momento para solicitar tu cita.
-                </p>
+              <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center">
+                      <Lightbulb className="w-5 h-5 text-white" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-blue-900 mb-2">Consejo Importante</h3>
+                    <p className="text-blue-800 leading-relaxed">
+                      Las citas previas suelen tener alta demanda. Te recomendamos revisar la disponibilidad 
+                      regularmente y no esperar al último momento para solicitar tu cita.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
