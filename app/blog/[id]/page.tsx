@@ -5,6 +5,7 @@ import AdSidebar from "@/components/AdSidebar";
 import AdBanner from "@/components/AdBanner";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
+import BlogViewTracker from "@/components/BlogViewTracker";
 import Image from "next/image";
 import Link from "next/link";
 import { 
@@ -1207,6 +1208,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 export default async function BlogPost({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const post = blogPosts[id];
+  
+  // Determinar el tipo de blog
+  const blogType: 'blog' | 'tutorial' = 'blog';
 
   if (!post) {
     return (
@@ -1360,6 +1364,7 @@ export default async function BlogPost({ params }: { params: Promise<{ id: strin
     <div className="min-h-screen flex flex-col">
       <Header />
       <ScrollProgressBar />
+      <BlogViewTracker blogId={id} blogType={blogType} />
       
       {/* Schema.org JSON-LD */}
       <script

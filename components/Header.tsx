@@ -123,10 +123,10 @@ export default function Header() {
               </Link>
               <span className="text-gray-400">/</span>
               <Link 
-                href="/tutoriales" 
+                href="/blog" 
                 className="uppercase font-medium hover:text-blue-600 transition-colors whitespace-nowrap px-2"
               >
-                Tutoriales
+                Blog
               </Link>
               <span className="text-gray-400">/</span>
               <Link 
@@ -169,13 +169,6 @@ export default function Header() {
                 className="uppercase font-medium hover:text-blue-600 transition-colors whitespace-nowrap px-2"
               >
                 Pensiones
-              </Link>
-              <span className="text-gray-400">/</span>
-              <Link 
-                href="/blog" 
-                className="uppercase font-medium hover:text-blue-600 transition-colors whitespace-nowrap px-2"
-              >
-                Blog
               </Link>
               <span className="text-gray-400">/</span>
               <Link 

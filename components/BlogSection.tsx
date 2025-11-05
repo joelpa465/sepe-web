@@ -12,7 +12,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import AdSidebar from "./AdSidebar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { blogPosts } from "@/lib/data";
 
 interface BlogPost {
   id: string;
@@ -28,107 +29,34 @@ interface BlogPost {
   image?: string;
 }
 
-const blogPosts: BlogPost[] = [
-  {
-    id: "baja-maternidad",
-    title: "Guía Completa para Pedir la Baja por Maternidad en España",
-    description: "Todo lo que necesitas saber sobre la baja por maternidad: requisitos, trámites, duración y cuantía. Una guía detallada para trabajadoras por cuenta ajena, autónomas y personas en situación de desempleo.",
-    icon: <Baby className="w-8 h-8" />,
-    gradient: "from-pink-500 to-rose-600",
-    category: "Prestaciones",
-    date: "16 OCT 2024",
-    readTime: "10 min",
-    author: "Equipo SEPE",
-    location: "España",
-    image: "/images/Blog/maternidad.png"
-  },
-  {
-    id: "cita-previa-seguridad-social",
-    title: "Cómo Solicitar Cita Previa en la Seguridad Social Paso a Paso",
-    description: "Guía completa para obtener tu cita previa en la Seguridad Social de forma online y presencial. Incluye requisitos, documentos necesarios y soluciones a los problemas más comunes.",
-    icon: <Calendar className="w-8 h-8" />,
-    gradient: "from-blue-500 to-indigo-600",
-    category: "Trámites",
-    date: "14 OCT 2024",
-    readTime: "7 min",
-    author: "Equipo SEPE",
-    location: "España",
-    image: "/images/Blog/cita-previa.png"
-  },
-  {
-    id: "ayudas-discapacitados",
-    title: "Ayudas y Prestaciones para Personas con Discapacidad o Diversidad Funcional",
-    description: "Descubre todas las ayudas y beneficios disponibles para personas con discapacidad: prestaciones económicas, ayudas técnicas, beneficios fiscales y acceso a vivienda protegida.",
-    icon: <Heart className="w-8 h-8" />,
-    gradient: "from-green-500 to-emerald-600",
-    category: "Ayudas",
-    date: "12 OCT 2024",
-    readTime: "12 min",
-    author: "Equipo SEPE",
-    location: "España",
-    image: "/images/Blog/ayudas-discapacidad.png"
-  },
-  {
-    id: "prestacion-desempleo",
-    title: "Prestación por Desempleo: Cómo Cobrar el Paro en 2024",
-    description: "Todo sobre la prestación por desempleo: requisitos de cotización, cuantía, duración máxima, cómo solicitarla y renovarla. Incluye calculadora de prestación y casos especiales.",
-    icon: <FileText className="w-8 h-8" />,
-    gradient: "from-purple-500 to-pink-600",
-    category: "Prestaciones",
-    date: "10 OCT 2024",
-    readTime: "10 min",
-    author: "Equipo SEPE",
-    location: "España"
-  },
-  {
-    id: "prestacion-hijo-cargo",
-    title: "Prestación por Hijo a Cargo: Requisitos y Cuantía 2024",
-    description: "Información detallada sobre la prestación por hijo a cargo: requisitos, cuantía, cómo solicitarla y diferencias entre prestación contributiva y no contributiva.",
-    icon: <Users className="w-8 h-8" />,
-    gradient: "from-orange-500 to-amber-600",
-    category: "Ayudas",
-    date: "8 OCT 2024",
-    readTime: "6 min",
-    author: "Equipo SEPE",
-    location: "España"
-  },
-  {
-    id: "pension-no-contributiva",
-    title: "Pensión No Contributiva: Requisitos y Cómo Solicitarla",
-    description: "Guía completa sobre las pensiones no contributivas: quién puede solicitarla, requisitos económicos, cuantía actualizada y proceso de solicitud paso a paso.",
-    icon: <GraduationCap className="w-8 h-8" />,
-    gradient: "from-violet-500 to-purple-600",
-    category: "Pensiones",
-    date: "6 OCT 2024",
-    readTime: "9 min",
-    author: "Equipo SEPE",
-    location: "España"
-  },
-  {
-    id: "ayudas-madres-solteras",
-    title: "Ayudas para Madres Solteras y Familias Monoparentales 2024",
-    description: "Prestaciones específicas para madres solteras y familias monoparentales: ayudas económicas, beneficios fiscales, acceso a vivienda y ayudas para la crianza.",
-    icon: <Heart className="w-8 h-8" />,
-    gradient: "from-rose-500 to-pink-600",
-    category: "Ayudas",
-    date: "4 OCT 2024",
-    readTime: "7 min",
-    author: "Equipo SEPE",
-    location: "España"
-  },
-  {
-    id: "trabajastur",
-    title: "Trabajastur: Servicio de Empleo del Principado de Asturias",
-    description: "Guía completa sobre Trabajastur: cursos gratuitos, ofertas de empleo, ayudas regionales y servicios disponibles para demandantes de empleo en Asturias.",
-    icon: <Building className="w-8 h-8" />,
-    gradient: "from-cyan-500 to-blue-600",
-    category: "Regionales",
-    date: "2 OCT 2024",
-    readTime: "5 min",
-    author: "Equipo SEPE",
-    location: "Asturias"
-  }
-];
+// Mapeo de iconos para los blogs
+const iconMap: { [key: string]: React.ReactNode } = {
+  "baja-maternidad": <Baby className="w-8 h-8" />,
+  "cita-previa-seguridad-social": <Calendar className="w-8 h-8" />,
+  "ayudas-discapacitados": <Heart className="w-8 h-8" />,
+  "prestacion-desempleo": <FileText className="w-8 h-8" />,
+  "prestacion-hijo-cargo": <Users className="w-8 h-8" />,
+  "pension-no-contributiva": <GraduationCap className="w-8 h-8" />,
+  "ayudas-madres-solteras": <Heart className="w-8 h-8" />,
+  "trabajastur": <Building className="w-8 h-8" />,
+};
+
+const gradientMap: { [key: string]: string } = {
+  "baja-maternidad": "from-pink-500 to-rose-600",
+  "cita-previa-seguridad-social": "from-blue-500 to-indigo-600",
+  "ayudas-discapacitados": "from-green-500 to-emerald-600",
+  "prestacion-desempleo": "from-purple-500 to-pink-600",
+  "prestacion-hijo-cargo": "from-orange-500 to-amber-600",
+  "pension-no-contributiva": "from-violet-500 to-purple-600",
+  "ayudas-madres-solteras": "from-rose-500 to-pink-600",
+  "trabajastur": "from-cyan-500 to-blue-600",
+};
+
+const imageMap: { [key: string]: string } = {
+  "baja-maternidad": "/images/Blog/maternidad.png",
+  "cita-previa-seguridad-social": "/images/Blog/cita-previa.png",
+  "ayudas-discapacitados": "/images/Blog/ayudas-discapacidad.png",
+};
 
 // Componente individual para cada post con manejo de errores de imagen
 function BlogPostItem({ post, index, total }: { post: BlogPost; index: number; total: number }) {
@@ -196,9 +124,90 @@ function BlogPostItem({ post, index, total }: { post: BlogPost; index: number; t
 }
 
 export default function BlogSection() {
+  const [sortedPosts, setSortedPosts] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Obtener los blogs más vistos
+    const fetchMostViewed = async () => {
+      try {
+        const response = await fetch('/api/most-viewed?limit=20');
+        const data = await response.json();
+        
+        if (data.blogs && data.blogs.length > 0) {
+          // Crear un mapa de visualizaciones
+          const viewsMap: { [key: string]: number } = {};
+          data.blogs.forEach((blog: { blog_id: string; blog_type: string; count: number }) => {
+            if (blog.blog_type === 'blog') {
+              viewsMap[blog.blog_id] = blog.count;
+            }
+          });
+
+          // Convertir blogPosts a BlogPost[] con iconos y gradientes
+          const postsWithViews: BlogPost[] = blogPosts.map(post => ({
+            ...post,
+            icon: iconMap[post.id] || <FileText className="w-8 h-8" />,
+            gradient: gradientMap[post.id] || "from-blue-500 to-indigo-600",
+            image: imageMap[post.id],
+            viewCount: viewsMap[post.id] || 0,
+          }));
+
+          // Ordenar por visualizaciones (más vistos primero)
+          postsWithViews.sort((a, b) => {
+            const aViews = (a as any).viewCount || 0;
+            const bViews = (b as any).viewCount || 0;
+            return bViews - aViews;
+          });
+
+          // Mostrar solo los 8 más vistos, o todos si no hay suficientes
+          setSortedPosts(postsWithViews.slice(0, 8));
+        } else {
+          // Si no hay datos de visualizaciones, usar los blogs por defecto
+          const defaultPosts: BlogPost[] = blogPosts.map(post => ({
+            ...post,
+            icon: iconMap[post.id] || <FileText className="w-8 h-8" />,
+            gradient: gradientMap[post.id] || "from-blue-500 to-indigo-600",
+            image: imageMap[post.id],
+          }));
+          setSortedPosts(defaultPosts);
+        }
+      } catch (error) {
+        console.error('Error fetching most viewed blogs:', error);
+        // En caso de error, usar los blogs por defecto
+        const defaultPosts: BlogPost[] = blogPosts.map(post => ({
+          ...post,
+          icon: iconMap[post.id] || <FileText className="w-8 h-8" />,
+          gradient: gradientMap[post.id] || "from-blue-500 to-indigo-600",
+          image: imageMap[post.id],
+        }));
+        setSortedPosts(defaultPosts);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMostViewed();
+  }, []);
+
+  if (loading) {
+    return (
+      <section id="blogs" className="py-16 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+              Blogs
+            </h2>
+          </div>
+          <div className="flex justify-center">
+            <div className="text-gray-500">Cargando...</div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section id="blogs" className="py-16 bg-white">
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -212,8 +221,8 @@ export default function BlogSection() {
           {/* Contenido principal - Lista vertical */}
           <div className="flex-1 max-w-4xl">
             <div className="space-y-0">
-              {blogPosts.map((post, index) => (
-                <BlogPostItem key={post.id} post={post} index={index} total={blogPosts.length} />
+              {sortedPosts.map((post, index) => (
+                <BlogPostItem key={post.id} post={post} index={index} total={sortedPosts.length} />
               ))}
             </div>
           </div>
