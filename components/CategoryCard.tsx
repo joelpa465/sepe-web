@@ -13,10 +13,10 @@ interface CategoryCardProps {
 
 export default function CategoryCard({ id, title, icon, items, href, index = 0 }: CategoryCardProps) {
   return (
-    <div className="bg-white rounded-lg border border-green-200 shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-      {/* Header con separador verde y título */}
+    <div className="bg-white rounded-lg border-2 border-blue-600 shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+      {/* Header con separador azul y título */}
       <div className="px-6 pt-6 pb-4">
-        <div className="border-b border-green-200 mb-4"></div>
+        <div className="border-b-2 border-blue-600 mb-4"></div>
         <h3 className="text-xl font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
           {title}
         </h3>
