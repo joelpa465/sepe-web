@@ -149,6 +149,34 @@ const mainCategories = [
       "IRPF 2024",
       "Declaración de la renta"
     ]
+  },
+  {
+    id: "certificados-documentos",
+    title: "Certificados y Documentos",
+    icon: "📄",
+    href: "/categorias/certificados-documentos",
+    items: [
+      "Vida laboral",
+      "Certificado de empresa",
+      "Certificado de prestaciones",
+      "Certificado de cotizaciones",
+      "Documentos necesarios SEPE",
+      "Duplicados de documentos"
+    ]
+  },
+  {
+    id: "servicios-digitales",
+    title: "Servicios Digitales",
+    icon: "💻",
+    href: "/categorias/servicios-digitales",
+    items: [
+      "Cl@ve PIN y Permanente",
+      "Certificado Digital FNMT",
+      "Sede Electrónica SEPE",
+      "Tu Seguridad Social",
+      "App móvil SEPE",
+      "Identificación digital"
+    ]
   }
 ];
 
