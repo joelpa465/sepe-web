@@ -15,22 +15,22 @@ export default function CategoryCard({ id, title, icon, items, href, index = 0 }
   return (
     <div className="bg-white rounded-lg border-2 border-blue-600 shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
       {/* Header con separador azul y título */}
-      <div className="px-6 pt-6 pb-4">
-        <div className="border-b-2 border-blue-600 mb-4"></div>
-        <h3 className="text-xl font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+      <div className="px-7 pt-7 pb-5">
+        <div className="border-b-2 border-blue-600 mb-5"></div>
+        <h3 className="text-2xl font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
           {title}
         </h3>
       </div>
       
       {/* Lista de items como enlaces */}
-      <div className="px-6 pb-4 flex-1">
-        <ul className="space-y-2">
+      <div className="px-7 pb-5 flex-1">
+        <ul className="space-y-3">
           {items.slice(0, 3).map((item, idx) => (
             <li key={idx} className="flex items-start">
-              <span className="w-1.5 h-1.5 rounded-full bg-black mt-2 mr-3 flex-shrink-0"></span>
+              <span className="w-2 h-2 rounded-full bg-black mt-2.5 mr-3 flex-shrink-0"></span>
               <Link 
                 href={href}
-                className="text-blue-600 hover:text-blue-800 hover:underline text-sm leading-relaxed transition-colors"
+                className="text-blue-600 hover:text-blue-800 hover:underline text-base leading-relaxed transition-colors"
               >
                 {item}
               </Link>
@@ -40,15 +40,15 @@ export default function CategoryCard({ id, title, icon, items, href, index = 0 }
       </div>
       
       {/* Separador gris claro */}
-      <div className="px-6">
+      <div className="px-7">
         <div className="border-t border-gray-200"></div>
       </div>
       
       {/* Botón "Más artículos" */}
-      <div className="px-6 py-4">
+      <div className="px-7 py-5">
         <Link 
           href={href}
-          className="block w-full text-center px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors text-sm"
+          className="block w-full text-center px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors text-base"
         >
           + Más artículos
         </Link>
