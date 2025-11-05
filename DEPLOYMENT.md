@@ -96,14 +96,46 @@ sudo npm install -g pm2
 
 ### 3.3 Configurar variables de entorno en el VPS
 
-```bash
-# En el directorio de tu aplicación
-nano .env.local
+**Método 1: Crear archivo .env.local en el servidor (Recomendado)**
 
-# Asegúrate de tener:
-NODE_ENV=production
-NEXT_PUBLIC_GA_ID=tu-id-aqui
+```bash
+# En el directorio de tu aplicación en el VPS
+cd /var/www/sepe-app  # o donde tengas tu aplicación
+
+# Crear el archivo .env.local
+nano .env.local
 ```
+
+Añade las siguientes variables (reemplaza con tus valores reales):
+
+```env
+# Variables de entorno para Supabase
+NEXT_PUBLIC_SUPABASE_URL=https://qpczejqwgahxgwzclodw.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=tu-clave-publica-de-supabase
+
+# Google Analytics / Tag Manager
+NEXT_PUBLIC_GA_ID=G-BKCNGX9D46
+```
+
+Guarda el archivo (`Ctrl+O`, `Enter`, `Ctrl+X`).
+
+**Método 2: Añadir variables directamente en PM2 (Alternativa)**
+
+Si prefieres no usar `.env.local`, puedes añadir las variables directamente en `ecosystem.config.js`:
+
+```javascript
+env: {
+  NODE_ENV: 'production',
+  PORT: 3000,
+  NEXT_PUBLIC_SUPABASE_URL: 'https://qpczejqwgahxgwzclodw.supabase.co',
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: 'tu-clave-publica-de-supabase',
+  NEXT_PUBLIC_GA_ID: 'G-BKCNGX9D46'
+}
+```
+
+**⚠️ Importante:** Después de configurar las variables de entorno:
+1. Reinicia PM2: `pm2 restart sepe-app`
+2. Verifica que las variables estén cargadas: `pm2 env sepe-app`
 
 ## 🔧 Paso 4: Configurar PM2
 
