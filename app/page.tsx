@@ -172,15 +172,15 @@ export default function Home() {
             </div>
             
             {/* Layout con sidebars publicitarios */}
-            <div className="flex gap-8">
+            <div className="flex gap-6">
               {/* Sidebar izquierdo - SOLO en desktop */}
-              <div className="hidden xl:block w-80 flex-shrink-0">
+              <div className="hidden xl:block w-72 flex-shrink-0">
                 <AdSidebar position="left" />
               </div>
               
               {/* Contenido principal - Responsive */}
               <div className="flex-1 max-w-full">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
                   {mainCategories.map((category, index) => (
                     <CategoryCard
                       key={category.id}
@@ -192,7 +192,7 @@ export default function Home() {
               </div>
               
               {/* Sidebar derecho - SOLO en desktop */}
-              <div className="hidden xl:block w-80 flex-shrink-0">
+              <div className="hidden xl:block w-72 flex-shrink-0">
                 <AdSidebar position="right" />
               </div>
             </div>
