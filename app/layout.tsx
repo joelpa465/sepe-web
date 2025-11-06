@@ -6,6 +6,7 @@ import CookieBanner from "@/components/CookieBanner";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import NewsletterBanner from "@/components/NewsletterBanner";
 import AdBlockDetectorWrapper from "@/components/AdBlockDetectorWrapper";
+import ConsoleFilter from "@/components/ConsoleFilter";
 import { ADS_ENABLED } from "@/lib/config";
 import { Suspense } from "react";
 
@@ -34,6 +35,18 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://sepe.es"),
   alternates: {
     canonical: "/",
+  },
+  icons: {
+    icon: [
+      { url: "/images/logo/favicon.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/logo/favicon.png", sizes: "16x16", type: "image/png" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/images/logo/favicon.png", sizes: "180x180", type: "image/png" },
+      { url: "/apple-icon.png", type: "image/png" },
+    ],
+    shortcut: "/images/logo/favicon.png",
   },
   openGraph: {
     type: "website",
@@ -83,8 +96,10 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        <link rel="icon" type="image/png" href="/icon.png" />
-        <link rel="apple-touch-icon" href="/apple-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/logo/favicon.png?v=2" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/logo/favicon.png?v=2" />
+        <link rel="shortcut icon" href="/images/logo/favicon.png?v=2" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/logo/favicon.png?v=2" />
         <link rel="manifest" href="/manifest.webmanifest" />
         <meta name="theme-color" content="#2563eb" />
         {/* Google Analytics - Scripts directos en HTML para que aparezcan en el HTML estático */}
@@ -116,6 +131,7 @@ export default function RootLayout({
             crossOrigin="anonymous"
           />
         )}
+        <ConsoleFilter />
         <Suspense fallback={null}>
           <GoogleAnalytics />
         </Suspense>
