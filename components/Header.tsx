@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
+import Logo from "./Logo";
 
 export default function Header() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -86,19 +86,7 @@ export default function Header() {
       <div className="bg-white border-b">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center h-20">
-            <Link href="/" className="flex items-center space-x-3">
-              <Image
-                src="/images/logo/logoSEPE.png"
-                alt="SEPE"
-                width={48}
-                height={48}
-                className="rounded-lg"
-                priority
-              />
-              <span className="text-3xl font-bold text-gray-900" style={{ fontFamily: 'serif' }}>
-                WEBCURSOSSEPE
-              </span>
-            </Link>
+            <Logo />
           </div>
         </div>
       </div>

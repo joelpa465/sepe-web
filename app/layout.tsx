@@ -38,13 +38,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/images/logo/favicon.png", sizes: "32x32", type: "image/png" },
-      { url: "/images/logo/favicon.png", sizes: "16x16", type: "image/png" },
-      { url: "/icon.png", type: "image/png" },
+      { url: "/images/logo/favicon.png", sizes: "any", type: "image/png" },
     ],
     apple: [
       { url: "/images/logo/favicon.png", sizes: "180x180", type: "image/png" },
-      { url: "/apple-icon.png", type: "image/png" },
     ],
     shortcut: "/images/logo/favicon.png",
   },
@@ -96,10 +93,10 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        <link rel="icon" type="image/png" sizes="32x32" href="/images/logo/favicon.png?v=2" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/images/logo/favicon.png?v=2" />
-        <link rel="shortcut icon" href="/images/logo/favicon.png?v=2" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/logo/favicon.png?v=2" />
+        <link rel="icon" type="image/png" href="/images/logo/favicon.png?v=7" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=7" />
+        <link rel="shortcut icon" type="image/png" href="/images/logo/favicon.png?v=7" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/logo/favicon.png?v=7" />
         <link rel="manifest" href="/manifest.webmanifest" />
         <meta name="theme-color" content="#2563eb" />
         {/* Google Analytics - Scripts directos en HTML para que aparezcan en el HTML estático */}
