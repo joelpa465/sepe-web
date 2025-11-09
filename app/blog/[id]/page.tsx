@@ -814,6 +814,303 @@ const blogPosts: { [key: string]: any } = {
       }
     ]
   },
+  "prestacion-hijo-cargo": {
+    title: "Prestación por Hijo a Cargo: Requisitos y Cuantía 2024",
+    description: "Guía completa sobre la prestación por hijo a cargo: requisitos, cuantía, cómo solicitarla y diferencias entre prestación contributiva y no contributiva.",
+    icon: Users,
+    gradient: "from-orange-500 to-amber-600",
+    category: "Ayudas",
+    date: "2024",
+    readTime: "8 min",
+    image: undefined,
+    content: [
+      {
+        type: "intro",
+        text: "La prestación por hijo a cargo es una ayuda económica que proporciona la Seguridad Social a las familias que tienen menores o personas con discapacidad a su cargo. Esta prestación busca aliviar la carga económica que supone el cuidado y mantenimiento de los hijos, especialmente en situaciones de necesidad."
+      },
+      {
+        type: "paragraph",
+        text: "Existen dos modalidades principales de esta prestación: la contributiva y la no contributiva. Cada una tiene requisitos específicos y está dirigida a diferentes perfiles de beneficiarios. En esta guía te explicamos todo lo que necesitas saber para acceder a esta ayuda."
+      },
+      {
+        type: "heading",
+        text: "¿Qué es la prestación por hijo a cargo?"
+      },
+      {
+        type: "paragraph",
+        text: "La prestación por hijo a cargo es una ayuda económica mensual que se otorga a las familias que tienen a su cargo hijos menores de 18 años o mayores de edad con discapacidad. Esta prestación forma parte del sistema de protección social y tiene como objetivo apoyar económicamente a las familias en el cuidado y mantenimiento de sus hijos."
+      },
+      {
+        type: "paragraph",
+        text: "Esta ayuda puede ser de dos tipos: contributiva (para trabajadores que han cotizado) o no contributiva (para personas sin recursos suficientes que no han cotizado lo necesario)."
+      },
+      {
+        type: "heading",
+        text: "Modalidades de la prestación"
+      },
+      {
+        type: "heading",
+        text: "1. Prestación Contributiva por Hijo a Cargo"
+      },
+      {
+        type: "paragraph",
+        text: "Esta modalidad está dirigida a trabajadores que han cotizado a la Seguridad Social y tienen hijos a su cargo. Es compatible con el trabajo y se paga de forma mensual."
+      },
+      {
+        type: "heading",
+        text: "Requisitos para la prestación contributiva:"
+      },
+      {
+        type: "list",
+        items: [
+          "Tener un hijo menor de 18 años a cargo, o mayor de 18 años con discapacidad igual o superior al 65%.",
+          "Estar afiliado y en alta en la Seguridad Social, o en situación asimilada al alta.",
+          "Haber cotizado un mínimo de días en los últimos 5 años (generalmente 500 días).",
+          "Tener ingresos inferiores a determinados límites establecidos anualmente.",
+          "Que el hijo resida en España y conviva con el beneficiario."
+        ]
+      },
+      {
+        type: "heading",
+        text: "Cuantía de la prestación contributiva:"
+      },
+      {
+        type: "paragraph",
+        text: "La cuantía de la prestación contributiva por hijo a cargo varía según la situación familiar y los ingresos. En 2024, las cuantías aproximadas son:"
+      },
+      {
+        type: "list",
+        items: [
+          "Hijo menor de 18 años sin discapacidad: aproximadamente 341 euros anuales (28,42 euros mensuales).",
+          "Hijo con discapacidad igual o superior al 33%: aproximadamente 1.000 euros anuales (83,33 euros mensuales).",
+          "Hijo con discapacidad igual o superior al 65%: aproximadamente 4.700 euros anuales (391,67 euros mensuales)."
+        ]
+      },
+      {
+        type: "highlight",
+        text: "Importante: Estas cuantías son orientativas y pueden variar según la normativa vigente. Se recomienda consultar las cuantías actualizadas en la web oficial de la Seguridad Social."
+      },
+      {
+        type: "heading",
+        text: "2. Prestación No Contributiva por Hijo a Cargo"
+      },
+      {
+        type: "paragraph",
+        text: "Esta modalidad está dirigida a familias con escasos recursos económicos que no han cotizado lo suficiente para acceder a la prestación contributiva. Es una ayuda de carácter asistencial."
+      },
+      {
+        type: "heading",
+        text: "Requisitos para la prestación no contributiva:"
+      },
+      {
+        type: "list",
+        items: [
+          "Tener un hijo menor de 18 años a cargo, o mayor de 18 años con discapacidad igual o superior al 65%.",
+          "No haber cotizado lo suficiente para acceder a la prestación contributiva.",
+          "Carecer de recursos económicos suficientes (los ingresos de la unidad familiar no deben superar los límites establecidos).",
+          "Residir legalmente en España y haberlo hecho durante al menos 5 años, de los cuales 2 deben ser inmediatamente anteriores a la solicitud.",
+          "Que el hijo resida en España y conviva con el beneficiario."
+        ]
+      },
+      {
+        type: "heading",
+        text: "Límites de ingresos para la prestación no contributiva:"
+      },
+      {
+        type: "paragraph",
+        text: "Los límites de ingresos se establecen anualmente y varían según la composición de la unidad familiar. En general, se tienen en cuenta:"
+      },
+      {
+        type: "list",
+        items: [
+          "Los ingresos del solicitante y de todos los miembros de la unidad familiar.",
+          "El patrimonio familiar (bienes, propiedades, etc.).",
+          "El número de hijos a cargo y su situación (con o sin discapacidad)."
+        ]
+      },
+      {
+        type: "paragraph",
+        text: "Se recomienda consultar los límites actualizados en la web de la Seguridad Social o en las oficinas del INSS."
+      },
+      {
+        type: "heading",
+        text: "Cuantía de la prestación no contributiva:"
+      },
+      {
+        type: "paragraph",
+        text: "La cuantía de la prestación no contributiva es similar a la contributiva, pero está sujeta a los ingresos de la unidad familiar. Puede ser reducida si los ingresos superan determinados umbrales."
+      },
+      {
+        type: "heading",
+        text: "¿Cómo solicitar la prestación por hijo a cargo?"
+      },
+      {
+        type: "paragraph",
+        text: "El proceso de solicitud puede realizarse de forma presencial o telemática. Te explicamos ambos métodos:"
+      },
+      {
+        type: "heading",
+        text: "Solicitud online (Recomendado):"
+      },
+      {
+        type: "list",
+        items: [
+          "Accede a la Sede Electrónica de la Seguridad Social (sede.seg-social.gob.es).",
+          "Identifícate con tu certificado digital, DNI electrónico o Cl@ve.",
+          "Busca el trámite \"Prestación por hijo a cargo\" en el menú de prestaciones familiares.",
+          "Cumplimenta el formulario con todos los datos requeridos.",
+          "Adjunta la documentación necesaria en formato digital.",
+          "Envía la solicitud y guarda el justificante."
+        ]
+      },
+      {
+        type: "heading",
+        text: "Solicitud presencial:"
+      },
+      {
+        type: "list",
+        items: [
+          "Solicita cita previa en el INSS (Instituto Nacional de la Seguridad Social).",
+          "Acude a la cita con toda la documentación necesaria.",
+          "Presenta el formulario de solicitud cumplimentado.",
+          "El funcionario revisará la documentación y te dará un resguardo de la solicitud."
+        ]
+      },
+      {
+        type: "heading",
+        text: "Documentación necesaria:"
+      },
+      {
+        type: "list",
+        items: [
+          "DNI o NIE del solicitante y de todos los miembros de la unidad familiar.",
+          "Libro de familia o certificado de empadronamiento que acredite la convivencia.",
+          "Certificado de discapacidad (si el hijo tiene discapacidad igual o superior al 33%).",
+          "Justificantes de ingresos de todos los miembros de la unidad familiar (nóminas, declaración de la renta, etc.).",
+          "Certificado de empadronamiento de todos los miembros de la familia.",
+          "Documentación acreditativa de la situación laboral (vida laboral, certificado de empresa, etc.).",
+          "IBAN para el cobro de la prestación."
+        ]
+      },
+      {
+        type: "heading",
+        text: "Plazo de resolución"
+      },
+      {
+        type: "paragraph",
+        text: "El plazo máximo para resolver la solicitud de prestación por hijo a cargo es de 90 días desde la presentación de la solicitud. Si transcurrido este plazo no se ha recibido respuesta, se puede entender que la solicitud ha sido denegada por silencio administrativo."
+      },
+      {
+        type: "paragraph",
+        text: "En caso de aprobación, la prestación se abonará desde el mes siguiente a la presentación de la solicitud, siempre que se cumplan todos los requisitos desde esa fecha."
+      },
+      {
+        type: "heading",
+        text: "Compatibilidad con otras prestaciones"
+      },
+      {
+        type: "paragraph",
+        text: "La prestación por hijo a cargo es compatible con:"
+      },
+      {
+        type: "list",
+        items: [
+          "Otras prestaciones familiares (prestación por nacimiento, ayuda familiar, etc.).",
+          "Prestaciones por desempleo.",
+          "Pensiones contributivas.",
+          "Salarios y otros ingresos del trabajo."
+        ]
+      },
+      {
+        type: "paragraph",
+        text: "Sin embargo, no es compatible con otras prestaciones no contributivas de la misma naturaleza si se perciben por el mismo hijo."
+      },
+      {
+        type: "heading",
+        text: "Duración y renovación"
+      },
+      {
+        type: "paragraph",
+        text: "La prestación por hijo a cargo se concede por períodos anuales y debe renovarse cada año mientras se sigan cumpliendo los requisitos. Es importante presentar la renovación antes de que finalice el período de vigencia para no perder el derecho a la prestación."
+      },
+      {
+        type: "heading",
+        text: "Casos especiales"
+      },
+      {
+        type: "heading",
+        text: "Hijos con discapacidad:"
+      },
+      {
+        type: "paragraph",
+        text: "Cuando el hijo tiene una discapacidad igual o superior al 33%, la cuantía de la prestación es mayor. Si la discapacidad es igual o superior al 65%, la cuantía se incrementa significativamente."
+      },
+      {
+        type: "heading",
+        text: "Familias numerosas:"
+      },
+      {
+        type: "paragraph",
+        text: "Las familias numerosas pueden acceder a cuantías adicionales o complementos específicos. Se recomienda consultar las ayudas específicas para familias numerosas."
+      },
+      {
+        type: "heading",
+        text: "Familias monoparentales:"
+      },
+      {
+        type: "paragraph",
+        text: "Las familias monoparentales (madres o padres solteros) pueden tener acceso a cuantías incrementadas o ayudas complementarias. Consulta las ayudas específicas para este tipo de familias."
+      },
+      {
+        type: "heading",
+        text: "Preguntas frecuentes"
+      },
+      {
+        type: "heading",
+        text: "¿Puedo solicitar la prestación si trabajo?"
+      },
+      {
+        type: "paragraph",
+        text: "Sí, la prestación por hijo a cargo es compatible con el trabajo. De hecho, para la modalidad contributiva es necesario estar trabajando o en situación asimilada al alta."
+      },
+      {
+        type: "heading",
+        text: "¿Qué pasa si mi hijo cumple 18 años?"
+      },
+      {
+        type: "paragraph",
+        text: "Si tu hijo cumple 18 años y no tiene discapacidad, la prestación finaliza. Sin embargo, si tiene una discapacidad igual o superior al 65%, puedes seguir percibiendo la prestación mientras se cumplan los demás requisitos."
+      },
+      {
+        type: "heading",
+        text: "¿Puedo solicitar la prestación si estoy cobrando el paro?"
+      },
+      {
+        type: "paragraph",
+        text: "Sí, la prestación por hijo a cargo es compatible con la prestación por desempleo. Ambas pueden percibirse simultáneamente."
+      },
+      {
+        type: "heading",
+        text: "¿Cuánto tarda en resolverse la solicitud?"
+      },
+      {
+        type: "paragraph",
+        text: "El plazo máximo de resolución es de 90 días. Si no recibes respuesta en ese plazo, puedes presentar una reclamación o consultar el estado de tu solicitud en la Sede Electrónica."
+      },
+      {
+        type: "heading",
+        text: "Conclusión"
+      },
+      {
+        type: "paragraph",
+        text: "La prestación por hijo a cargo es una ayuda importante para las familias que tienen menores o personas con discapacidad a su cargo. Conocer los requisitos, la documentación necesaria y el proceso de solicitud te ayudará a acceder a esta prestación de forma más eficiente."
+      },
+      {
+        type: "paragraph",
+        text: "Recuerda que es fundamental mantener actualizada la documentación y renovar la prestación anualmente para no perder el derecho a esta ayuda. Si tienes dudas, no dudes en consultar en las oficinas del INSS o en la Sede Electrónica de la Seguridad Social."
+      }
+    ]
+  },
   "cita-previa-seguridad-social": {
     title: "Cómo Solicitar Cita Previa en el Instituto Nacional de la Seguridad Social (INSS)",
     description: "Guía completa para solicitar, gestionar y comprender el sistema de cita previa del INSS. Procedimiento detallado paso a paso.",

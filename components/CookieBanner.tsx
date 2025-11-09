@@ -43,7 +43,7 @@ export default function CookieBanner() {
   return (
     <>
       {/* Banner principal - Fijo en la parte inferior */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-gray-900 text-white shadow-2xl">
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-blue-900 text-white shadow-2xl">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
             {/* Contenido izquierdo */}
@@ -51,7 +51,7 @@ export default function CookieBanner() {
               <h3 className="text-lg font-semibold mb-2">
                 Valoramos tu privacidad
               </h3>
-              <p className="text-sm text-gray-300 leading-relaxed">
+              <p className="text-sm text-blue-100 leading-relaxed">
                 Usamos cookies para mejorar su experiencia de navegación, mostrarle anuncios o contenidos 
                 personalizados y analizar nuestro tráfico. Al hacer clic en "Aceptar todo" usted da su 
                 consentimiento a nuestro uso de las cookies.
@@ -62,7 +62,7 @@ export default function CookieBanner() {
             <div className="flex flex-wrap items-center gap-3">
               <button
                 onClick={() => setShowCustomize(!showCustomize)}
-                className="flex items-center gap-2 px-4 py-2 bg-white text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium text-sm"
+                className="flex items-center gap-2 px-4 py-2 bg-white text-blue-900 border border-blue-700 rounded-lg hover:bg-blue-50 transition-colors font-medium text-sm"
               >
                 Personalizar
                 <ChevronDown 
@@ -71,13 +71,13 @@ export default function CookieBanner() {
               </button>
               <button
                 onClick={handleRejectAll}
-                className="px-4 py-2 bg-white text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium text-sm"
+                className="px-4 py-2 bg-white text-blue-900 border border-blue-700 rounded-lg hover:bg-blue-50 transition-colors font-medium text-sm"
               >
                 Rechazar todo
               </button>
               <button
                 onClick={handleAcceptAll}
-                className="px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-medium text-sm"
+                className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium text-sm shadow-md"
               >
                 Aceptar todo
               </button>
@@ -88,7 +88,7 @@ export default function CookieBanner() {
 
       {/* Panel de personalización - Se expande desde el banner */}
       {showCustomize && (
-        <div className="fixed bottom-20 left-0 right-0 z-40 bg-white border-t-2 border-gray-900 shadow-2xl max-h-[60vh] overflow-y-auto">
+        <div className="fixed bottom-20 left-0 right-0 z-40 bg-white border-t-2 border-blue-900 shadow-2xl max-h-[60vh] overflow-y-auto">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <h4 className="text-xl font-bold text-gray-900 mb-4">
               Personalizar cookies
@@ -174,7 +174,7 @@ export default function CookieBanner() {
                 </button>
                 <button
                   onClick={handleCustomize}
-                  className="px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-medium text-sm"
+                  className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium text-sm shadow-md"
                 >
                   Guardar preferencias
                 </button>
