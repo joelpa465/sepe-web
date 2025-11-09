@@ -263,4 +263,78 @@ export default function CertificadoPenalesPage() {
                       return (
                         <div
                           key={canal.title}
-                          className={`rounded-2xl border border-gray-200 bg-gradient-to-br ${canal.color} p-6`
+                          className={`rounded-2xl border border-gray-200 bg-gradient-to-br ${canal.color} p-6`}
+                        >
+                          <div className="flex items-center mb-4">
+                            <div className="w-12 h-12 rounded-lg bg-white/70 flex items-center justify-center mr-4">
+                              <Icon className="w-6 h-6 text-blue-700" />
+                            </div>
+                            <h3 className="text-2xl font-bold text-gray-900">{canal.title}</h3>
+                          </div>
+                          <ul className="space-y-3 text-gray-700">
+                            {canal.pasos.map((paso, idx) => (
+                              <li key={idx} className="flex items-start">
+                                <CheckCircle className="w-5 h-5 text-blue-700 mr-2 flex-shrink-0 mt-0.5" />
+                                <span>{paso}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Documentos necesarios */}
+                <div className="mb-12">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Documentos necesarios</h2>
+                  <ul className="space-y-4 text-gray-700">
+                    {documentos.map((documento, index) => (
+                      <li key={index} className="flex items-start">
+                        <MapPin className="w-5 h-5 text-blue-700 mr-2 flex-shrink-0 mt-0.5" />
+                        <span>{documento}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Recomendaciones */}
+                <div className="mb-12">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Recomendaciones</h2>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {recomendaciones.map((recomendacion, index) => (
+                      <div
+                        key={index}
+                        className={`bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-blue-300 transition-colors ${recomendacion.color}`}
+                      >
+                        <div className="flex items-center mb-4">
+                          <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mr-4">
+                            <recomendacion.icon className="w-6 h-6 text-blue-700" />
+                          </div>
+                          <h3 className="text-xl font-bold text-gray-900">{recomendacion.title}</h3>
+                        </div>
+                        <p className="text-gray-600 text-sm">{recomendacion.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Ad Banner */}
+                <div className="mt-12">
+                  <AdBanner />
+                </div>
+              </div>
+
+              {/* Sidebar derecha */}
+              <div className="hidden xl:block w-80 flex-shrink-0">
+                <AdSidebar position="right" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
