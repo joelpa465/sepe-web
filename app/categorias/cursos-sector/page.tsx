@@ -13,12 +13,12 @@ export const metadata: Metadata = {
 };
 
 const sectores = [
-  { id: "seo", nombre: "SEO y Marketing Digital", icon: "🔍", cursos: 28, descripcion: "Posicionamiento web y marketing online" },
+  { id: "seo-avanzado", nombre: "SEO Avanzado", icon: "🔍", cursos: 28, descripcion: "Posicionamiento web y marketing online" },
   { id: "youtube", nombre: "Youtube y Redes Sociales", icon: "📺", cursos: 18, descripcion: "Creación de contenido y monetización" },
   { id: "programacion", nombre: "Programación", icon: "💻", cursos: 32, descripcion: "Desarrollo web y aplicaciones" },
-  { id: "marketing", nombre: "Marketing Digital", icon: "📊", cursos: 25, descripcion: "Estrategias digitales y publicidad" },
-  { id: "diseno", nombre: "Diseño Gráfico", icon: "🎨", cursos: 22, descripcion: "Diseño visual y creatividad" },
-  { id: "comercio", nombre: "Comercio y Ventas", icon: "🛒", cursos: 20, descripcion: "Gestión comercial y atención al cliente" }
+  { id: "marketing-digital", nombre: "Marketing Digital", icon: "📊", cursos: 25, descripcion: "Estrategias digitales y publicidad" },
+  { id: "barcelona", nombre: "Cursos SEPE Barcelona", icon: "🏙️", cursos: 45, descripcion: "Formación profesional en Barcelona" },
+  { id: "madrid", nombre: "Cursos SEPE Madrid", icon: "🏛️", cursos: 52, descripcion: "Formación profesional en Madrid" }
 ];
 
 export default function CursosSectorPage() {

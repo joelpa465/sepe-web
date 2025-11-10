@@ -24,15 +24,15 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "SEPE - Guía Completa de Trámites, Ayudas y Cursos",
-    template: "%s | SEPE",
+    default: "Web Cursos SEPE - Guía Completa de Trámites, Ayudas y Cursos 2024",
+    template: "%s | Web Cursos SEPE",
   },
   description: "Guía completa del SEPE: citas previas, cursos por CCAA, ayudas, prestaciones, subsidios, pensiones, trámites administrativos y más. Tutoriales paso a paso actualizados 2024.",
   keywords: ["sepe", "trámites sepe", "citas previas sepe", "ayudas sepe", "prestaciones sepe", "subsidios sepe", "pensiones", "cursos sepe", "curso inem", "ingenio mínimo vital", "modelo 600", "certificado penales", "sellar paro"],
   authors: [{ name: "SEPE" }],
   creator: "SEPE",
   publisher: "SEPE",
-  metadataBase: new URL("https://sepe.es"),
+  metadataBase: new URL("https://webcursosepe.es"),
   alternates: {
     canonical: "/",
   },
@@ -48,24 +48,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_ES",
-    url: "https://sepe.es",
-    title: "SEPE - Guía Completa de Trámites, Ayudas y Cursos",
+    url: "https://webcursosepe.es",
+    title: "Web Cursos SEPE - Guía Completa de Trámites, Ayudas y Cursos",
     description: "Todo sobre el SEPE: citas previas, cursos, ayudas, prestaciones, subsidios y más. Tutoriales paso a paso 2024.",
-    siteName: "SEPE",
+    siteName: "Web Cursos SEPE",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://webcursosepe.es/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Cursos SEPE",
+        alt: "Web Cursos SEPE",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SEPE - Guía Completa de Trámites, Ayudas y Cursos",
+    title: "Web Cursos SEPE - Guía Completa de Trámites, Ayudas y Cursos",
     description: "Todo sobre el SEPE: citas previas, cursos, ayudas, prestaciones, subsidios. Tutoriales paso a paso 2024.",
-    images: ["/og-image.jpg"],
+    images: ["https://webcursosepe.es/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -128,6 +128,42 @@ export default function RootLayout({
             crossOrigin="anonymous"
           />
         )}
+        {/* Schema.org JSON-LD - Organization y Website */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Web Cursos SEPE",
+              url: "https://webcursosepe.es",
+              logo: "https://webcursosepe.es/images/logo/logo.png",
+              description: "Guía completa del SEPE: citas previas, cursos por CCAA, ayudas, prestaciones, subsidios, pensiones, trámites administrativos y más.",
+              sameAs: [
+                // Añade aquí tus redes sociales cuando las tengas
+              ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Web Cursos SEPE",
+              url: "https://webcursosepe.es",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: {
+                  "@type": "EntryPoint",
+                  urlTemplate: "https://webcursosepe.es/buscar?q={search_term_string}",
+                },
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
+        />
         <ConsoleFilter />
         <Suspense fallback={null}>
           <GoogleAnalytics />

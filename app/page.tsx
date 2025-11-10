@@ -16,12 +16,12 @@ const mainCategories = [
     icon: "📅",
     href: "/categorias/cita-previa",
     items: [
-      "Cita previa INEM (SEPE)",
-      "Anular cita previa INEM",
-      "Cita previa Seguridad Social",
-      "Cita previa Extranjería",
-      "Cita previa Hacienda",
-      "Cita previa DGT"
+      { title: "Cita previa INEM (SEPE)", href: "/tutoriales/cita-previa-inem" },
+      { title: "Anular cita previa INEM", href: "/tutoriales/anular-cita-sepe" },
+      { title: "Cita previa Seguridad Social", href: "/tutoriales/cita-previa-seguridad-social" },
+      { title: "Cita previa Extranjería", href: "/tutoriales/cita-previa-extranjeria" },
+      { title: "Cita previa Hacienda", href: "/tutoriales/cita-previa-hacienda" },
+      { title: "Cita previa DGT", href: "/tutoriales/cita-previa-dgt" }
     ]
   },
   {
@@ -30,12 +30,12 @@ const mainCategories = [
     icon: "🗺️",
     href: "/categorias/cursos-ccaa",
     items: [
-      "Cursos INEM Barcelona",
-      "Cursos INEM Madrid",
-      "Cursos INEM Sevilla",
-      "Cursos INEM Málaga",
-      "Cursos INEM Valencia",
-      "Cursos INEM Bilbao"
+      { title: "Cursos INEM Barcelona", href: "/cursos-ccaa/barcelona" },
+      { title: "Cursos INEM Madrid", href: "/cursos-ccaa/madrid" },
+      { title: "Cursos INEM Sevilla", href: "/cursos-ccaa/sevilla" },
+      { title: "Cursos INEM Málaga", href: "/cursos-ccaa/malaga" },
+      { title: "Cursos INEM Valencia", href: "/cursos-ccaa/valencia" },
+      { title: "Cursos INEM Bilbao", href: "/cursos-ccaa/bilbao" }
     ]
   },
   {
@@ -44,12 +44,12 @@ const mainCategories = [
     icon: "💼",
     href: "/categorias/cursos-sector",
     items: [
-      "Cursos SEPE Barcelona",
-      "Cursos SEPE Madrid",
-      "Curso de SEO Avanzado",
-      "Curso de Youtube",
-      "Cursos de Marketing Digital",
-      "Cursos de Programación"
+      { title: "Cursos SEPE Barcelona", href: "/cursos-sector/barcelona" },
+      { title: "Cursos SEPE Madrid", href: "/cursos-sector/madrid" },
+      { title: "Curso de SEO Avanzado", href: "/cursos-sector/seo-avanzado" },
+      { title: "Curso de Youtube", href: "/cursos-sector/youtube" },
+      { title: "Cursos de Marketing Digital", href: "/cursos-sector/marketing-digital" },
+      { title: "Cursos de Programación", href: "/cursos-sector/programacion" }
     ]
   },
   {
@@ -58,12 +58,12 @@ const mainCategories = [
     icon: "💰",
     href: "/categorias/ayudas-sepe",
     items: [
-      "Ingreso Mínimo Vital",
-      "Ayudas para madres solteras",
-      "Ayudas para personas con discapacidad",
-      "Ayudas alquiler",
-      "Ayuda familiar",
-      "Ayudas para jóvenes"
+      { title: "Ingreso Mínimo Vital", href: "/ayudas/ingreso-minimo-vital" },
+      { title: "Ayudas para madres solteras", href: "/ayudas/madres-solteras" },
+      { title: "Ayudas para personas con discapacidad", href: "/ayudas/discapacidad" },
+      { title: "Ayudas alquiler", href: "/ayudas/alquiler" },
+      { title: "Ayuda familiar", href: "/ayudas/familiar" },
+      { title: "Ayudas para jóvenes", href: "/ayudas/jovenes" }
     ]
   },
   {
@@ -72,12 +72,12 @@ const mainCategories = [
     icon: "📋",
     href: "/categorias/prestaciones-sepe",
     items: [
-      "Prestación por hijo a cargo",
-      "Prestación por desempleo",
-      "Baja por maternidad",
-      "Prestación contributiva",
-      "Prestación no contributiva",
-      "Baja por paternidad"
+      { title: "Prestación por hijo a cargo", href: "/prestaciones/hijo-a-cargo" },
+      { title: "Prestación por desempleo", href: "/prestaciones/desempleo" },
+      { title: "Baja por maternidad", href: "/prestaciones/maternidad" },
+      { title: "Prestación contributiva", href: "/prestaciones/contributiva" },
+      { title: "Prestación no contributiva", href: "/prestaciones/no-contributiva" },
+      { title: "Baja por paternidad", href: "/prestaciones/paternidad" }
     ]
   },
   {
@@ -86,12 +86,12 @@ const mainCategories = [
     icon: "🏛️",
     href: "/categorias/tramites-sepe",
     items: [
-      "TGSS (Tesorería General)",
-      "Sellar paro",
-      "Apuntarse al paro",
-      "INSS",
-      "Vida laboral",
-      "Certificado empresa"
+      { title: "TGSS (Tesorería General)", href: "/tramites/tgss" },
+      { title: "Sellar paro", href: "/tramites/sellar-paro" },
+      { title: "Apuntarse al paro", href: "/tramites/apuntarse-paro" },
+      { title: "INSS", href: "/tramites/inss" },
+      { title: "Vida laboral", href: "/tramites/vida-laboral" },
+      { title: "Certificado empresa", href: "/tramites/certificado-empresa" }
     ]
   },
   {
@@ -100,12 +100,12 @@ const mainCategories = [
     icon: "💸",
     href: "/categorias/subsidios",
     items: [
-      "Subsidio por desempleo",
-      "Mayores de 45 años",
-      "Insuficiencia de cotización",
-      "Mayores de 52 años",
-      "Subsidio agrario",
-      "Renta Activa de Inserción"
+      { title: "Subsidio por desempleo", href: "/subsidios/desempleo" },
+      { title: "Mayores de 45 años", href: "/subsidios/mayores-45" },
+      { title: "Insuficiencia de cotización", href: "/subsidios/insuficiencia-cotizacion" },
+      { title: "Mayores de 52 años", href: "/subsidios/mayores-52" },
+      { title: "Subsidio agrario", href: "/subsidios/agrario" },
+      { title: "Renta Activa de Inserción", href: "/subsidios/renta-activa" }
     ]
   },
   {
@@ -114,12 +114,12 @@ const mainCategories = [
     icon: "👴",
     href: "/categorias/pensiones",
     items: [
-      "Pensión no contributiva",
-      "Pensión de orfandad",
-      "Pensión de viudedad",
-      "Pensión máxima de jubilación",
-      "Pensión de incapacidad",
-      "Pensión alimenticia"
+      { title: "Pensión no contributiva", href: "/pensiones/no-contributiva" },
+      { title: "Pensión de orfandad", href: "/pensiones/orfandad" },
+      { title: "Pensión de viudedad", href: "/pensiones/viudedad" },
+      { title: "Pensión máxima de jubilación", href: "/pensiones/jubilacion-maxima" },
+      { title: "Pensión de incapacidad", href: "/pensiones/incapacidad" },
+      { title: "Pensión alimenticia", href: "/pensiones/alimenticia" }
     ]
   },
   {
@@ -128,12 +128,12 @@ const mainCategories = [
     icon: "🎓",
     href: "/categorias/masters",
     items: [
-      "Máster SEO",
-      "Máster SEM",
-      "Máster Marketing Digital",
-      "Máster Inteligencia Artificial",
-      "Máster Big Data",
-      "Máster UX/UI"
+      { title: "Máster SEO", href: "/categorias/masters" },
+      { title: "Máster SEM", href: "/categorias/masters" },
+      { title: "Máster Marketing Digital", href: "/categorias/masters" },
+      { title: "Máster Inteligencia Artificial", href: "/categorias/masters" },
+      { title: "Máster Big Data", href: "/categorias/masters" },
+      { title: "Máster UX/UI", href: "/categorias/masters" }
     ]
   },
   {
@@ -142,12 +142,12 @@ const mainCategories = [
     icon: "🧮",
     href: "/categorias/fiscal",
     items: [
-      "Certificado de penales",
-      "Modelo 600",
-      "Modelo 145",
-      "Modelo 036",
-      "IRPF 2024",
-      "Declaración de la renta"
+      { title: "Certificado de penales", href: "/fiscal/certificado-penales" },
+      { title: "Modelo 600", href: "/fiscal/modelo-600" },
+      { title: "Modelo 145", href: "/fiscal/modelo-145" },
+      { title: "Modelo 036", href: "/fiscal/modelo-036" },
+      { title: "IRPF 2024", href: "/fiscal/irpf-2024" },
+      { title: "Declaración de la renta", href: "/fiscal/declaracion-renta" }
     ]
   },
   {
@@ -156,12 +156,12 @@ const mainCategories = [
     icon: "📄",
     href: "/categorias/certificados-documentos",
     items: [
-      "Vida laboral",
-      "Certificado de empresa",
-      "Certificado de prestaciones",
-      "Certificado de cotizaciones",
-      "Documentos necesarios SEPE",
-      "Duplicados de documentos"
+      { title: "Vida laboral", href: "/tramites/vida-laboral" },
+      { title: "Certificado de empresa", href: "/tramites/certificado-empresa" },
+      { title: "Certificado de prestaciones", href: "/certificados/prestaciones" },
+      { title: "Certificado de cotizaciones", href: "/tramites/inss" },
+      { title: "Documentos necesarios SEPE", href: "/requisitos" },
+      { title: "Duplicados de documentos", href: "/certificados/duplicados" }
     ]
   },
   {
@@ -170,12 +170,12 @@ const mainCategories = [
     icon: "💻",
     href: "/categorias/servicios-digitales",
     items: [
-      "Cl@ve PIN y Permanente",
-      "Certificado Digital FNMT",
-      "Sede Electrónica SEPE",
-      "Tu Seguridad Social",
-      "App móvil SEPE",
-      "Identificación digital"
+      { title: "Cl@ve PIN y Permanente", href: "/servicios-digitales/clave-pin" },
+      { title: "Certificado Digital FNMT", href: "/servicios-digitales/certificado-digital" },
+      { title: "Sede Electrónica SEPE", href: "/servicios-digitales/sede-electronica-sepe" },
+      { title: "Tu Seguridad Social", href: "/servicios-digitales/tu-seguridad-social" },
+      { title: "App móvil SEPE", href: "/servicios-digitales/app-sepe" },
+      { title: "Identificación digital", href: "/servicios-digitales/identificacion-digital" }
     ]
   }
 ];

@@ -2,11 +2,16 @@
 
 import Link from "next/link";
 
+interface CategoryItem {
+  title: string;
+  href: string;
+}
+
 interface CategoryCardProps {
   id: string;
   title: string;
   icon: string;
-  items: string[];
+  items: CategoryItem[];
   href: string;
   index?: number;
 }
@@ -29,10 +34,10 @@ export default function CategoryCard({ id, title, icon, items, href, index = 0 }
             <li key={idx} className="flex items-start">
               <span className="w-2 h-2 rounded-full bg-black mt-2.5 mr-3 flex-shrink-0"></span>
               <Link 
-                href={href}
+                href={item.href}
                 className="text-blue-600 hover:text-blue-800 hover:underline text-base leading-relaxed transition-colors"
               >
-                {item}
+                {item.title}
               </Link>
             </li>
           ))}
